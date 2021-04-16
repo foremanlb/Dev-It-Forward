@@ -93,4 +93,3 @@ Creating an app for subject matter experts to connect to potential students for 
     Getting stuck and not seeking help
     Unfamiliarity with branch development and handling merge errors
 
-
