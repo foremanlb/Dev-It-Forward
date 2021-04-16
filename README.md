@@ -1,4 +1,4 @@
-# Pay-It-Forward
+# Dev-It-Forward
 
 Netlify URL HERE
 
@@ -8,7 +8,11 @@ Creating an app for subject matter experts to connect to potential students for 
 
 ## Wireframes
 
+![wireframe](https://github.com/foremanlb/Dev-It-Forward/blob/development/assets/PayitForward.png)
+
 ## Component Hierarchy
+
+![hierarchy](https://github.com/foremanlb/Dev-It-Forward/blob/development/assets/PayitForward%20-%20Full-Stack%20Hierarchy.png)
 
 ## API and Data Sample
 
@@ -89,4 +93,3 @@ Creating an app for subject matter experts to connect to potential students for 
     Getting stuck and not seeking help
     Unfamiliarity with branch development and handling merge errors
 
-# Pay-It-Forward
