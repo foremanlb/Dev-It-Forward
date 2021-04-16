@@ -4,7 +4,7 @@ Netlify URL HERE
 
 ## Project Description
 
-Creating a app for subject matter experts to connect to potential students for tutoring.
+Creating an app for subject matter experts to connect to potential students for tutoring.
 
 ## Wireframes
 
@@ -57,7 +57,7 @@ Creating a app for subject matter experts to connect to potential students for t
 | ---------------- | :------: | :------------: | :-----------: |
 | Proposal/Concept |    H     |      4hrs      |       7       |
 
-| Totals | L | 41.5 | 30 |
+| Totals | L | 0 | 0 |
 
 ## SWOT Analysis
 
