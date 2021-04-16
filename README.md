@@ -8,7 +8,7 @@ Creating an app for subject matter experts to connect to potential students for 
 
 ## Wireframes
 
-![wireframe] (https://github.com/foremanlb/Dev-It-Forward/blob/development/assets/PayitForward.png)
+![wireframe](https://github.com/foremanlb/Dev-It-Forward/blob/development/assets/PayitForward.png)
 
 ## Component Hierarchy
 
