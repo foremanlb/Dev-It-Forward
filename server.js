@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.jason());
 app.use(logger("dev"));
 //
-app.use('/api')
+app.use('/api/routes')
 
 
 
