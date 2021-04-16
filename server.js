@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.jason());
 app.use(logger("dev"));
 //
-app.use()
+app.use('/api')
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
