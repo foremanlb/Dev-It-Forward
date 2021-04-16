@@ -1,4 +1,4 @@
-const { Router, Router } = require("express");
+const { Router} = require("express");
 const { signUp, signUp, verify } = require("../controllers/users.js");
 const router = Router();
 router.post("/sign-up", signUp);
