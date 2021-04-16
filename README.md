@@ -1,19 +1,14 @@
 # Pay-It-Forward
 
-
+Netlify URL HERE
 
 ## Project Description
 
-Creating a mobile-first app for subject matter experts to connect to potential students for tutoring.
-
+Creating a app for subject matter experts to connect to potential students for tutoring.
 
 ## Wireframes
 
-
-
 ## Component Hierarchy
-
-
 
 ## API and Data Sample
 
@@ -21,69 +16,77 @@ Creating a mobile-first app for subject matter experts to connect to potential s
 
 ```
 
-### MVP/PostMVP
-
 #### MVP
 
-- 
+- Back-End/MERN Stack
+  - Full Back End CRUD for both Users and Tutors
+  - Integrated Authorization and Authentication
+- Front-End/React
+  - Robust Functionality with 12 stateful Components
+  - Responsive Mobile-First CSS Design
+- Misc
+  - Effective use of Agile Methodology/SCRUM/Product Management/Kanban Board
+  - Easy to follow React file architecture
 
 #### PostMVP
+
 - Collaborate with UX Design specialist
-- Add feature to upload image from local storage
-- Add up/down vote feature
-- Display most upvoted tattoo and story on main page
-- Add links to artist (if applicable)
-- 
+- Adding a Rating System
+- Add Tutor Filtering System
+- Add Tutor Sorting System
+- Add Payment System
+- Add Chat/Messaging System
 
 ## Project Schedule
 
-| Day       | Deliverable                        | Status     |
-| --------- | ---------------------------------- | ---------- |
-| Apr 4/15 | Proposal Approval / Airtable Setup  | Incomplete |
-| Apr 4/16 | Components for Get, Post,Delete     | Incomplete |
-| Apr 4/17 | CSS Styling                         | Incomplete |
-| Apr 4/18 | CSS Styling / MVP                   | Incomplete |
-| Apr 4/19 | Advanced CSS/Testing                | Incomplete |
-| Apr 4/20 | Presentations                       | Incomplete |
+| Day      | Deliverable                          | Status     |
+| -------- | ------------------------------------ | ---------- |
+| Apr 4/15 | Pre-Pitch/Concept                    | Complete   |
+| Apr 4/16 | Project Proposal/Back-End Setup      | Incomplete |
+| Apr 4/17 | Finish Back-End Start Front End      | Incomplete |
+| Apr 4/18 | Front End Development                | Incomplete |
+| Apr 4/19 | Front End Development                | Incomplete |
+| Apr 4/20 | Finish Front End Development/Testing | Incomplete |
+| Apr 4/21 | CSS Styling /Testing                 | Incomplete |
+| Apr 4/22 | CSS Styling /Testing/No New Features | Incomplete |
+| Apr 4/23 | Presentations                        | Incomplete |
 
 ## Timeframe and Priority Matrix
 
 | Component        | Priority | Estimated Time | Time Invested |
 | ---------------- | :------: | :------------: | :-----------: |
-| Proposal         |    H     |      2hrs      |       2       |
-| SWOT             |    H     |     1.5hrs     |      1.5      |
-| Airtable setup   |    H     |     .5hrs      |       1       |
-| Rendering Imgs   |    H     |      2hrs      |     1.75      |
-| Routing          |    H     |      4hrs      |     3.25      |
-| Building Get     |    H     |      1hr       |       1       |
-| Building Post    |    H     |      3hrs      |      3.5      |
-| Building Delete  |    H     |      3hrs      |       4       |
-| Refactoring Code |    H     |      3hrs      |       3       |
-| CSS Styling      |    H     |      7hrs      |       4       |
-| Debugging        |    H     |     10hrs      |       6       |
-| Totals           |    L     |      41.5      |      30       |
+| Proposal/Concept |    H     |      4hrs      |       7       |
+
+| Totals | L | 41.5 | 30 |
 
 ## SWOT Analysis
 
 ### Strengths:
 
-Create and Read will be the first and easiest part of CRUD
-CSS Styling will be fun and challenging (hoping to integrate/research new styling techniques to make the page easy on the eyes)
+    Craig: Front End/React Functions, Style
+    Will: functions, state, manipulating data
+    Ike: Back-end - db/model/controller
+    Francis: Linting/Back-End Development/Management
 
 ### Weaknesses:
 
-Still having problems targeting specific information and Link/Routing so that when a user clicks on a image it will send them to a specific page based upon the ID of the tattoo object.
-BUTTONS
-Not sure how to I'm going to display the images by (my plan was to display the images by descending create time so that most recently posted tattoo object displays first)
+    Craig:Back End/Authentication, Presentation
+    Will: connecting backend to front/authentication
+    Ike: Front-end/css/planning projects/presenting things
+    Francis: React/ Front-End Development /Authentication/ Authorization/Design/CSS
 
 ### Opportunities:
 
-To strengthen my weaknesses within React both conceptually and technically, work on being able to track my workflow.
-Looking to add a new fully fleshed out passion project that is marginally more complex than my first project.
+    First Foray into AGILE SDLC style
+    Strengthen Weakpoints and learning other developer coding styles
+    Learning to develop in a team-based environment
 
 ### Threats:
 
-Sometimes I get stuck and throw my plan of attack out the window and start panic coding while not understanding what exactly my code or plan is doing
-Trying to shift my workflow and mentality high-low to a fluid slow burn build up.
+    Since we are an untested group there is a risk of non-cohesion
+    Over scoping our project
+    Run risk of ineffective time usage
+    Getting stuck and not seeking help
+    Unfamiliarity with branch development and handling merge errors
 
 # Pay-It-Forward
