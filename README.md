@@ -1,4 +1,4 @@
-# Pay-It-Forward
+# Dev-It-Forward
 
 Netlify URL HERE
 
@@ -92,3 +92,4 @@ Creating an app for subject matter experts to connect to potential students for 
     Run risk of ineffective time usage
     Getting stuck and not seeking help
     Unfamiliarity with branch development and handling merge errors
+
