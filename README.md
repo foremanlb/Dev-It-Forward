@@ -30,7 +30,11 @@ Creating an app for subject matter experts to connect to potential students for 
   - Responsive Mobile-First CSS Design
 - Misc
   - Effective use of Agile Methodology/SCRUM/Product Management/Kanban Board
-  - Easy to follow React file architecture
+  - Use of Effective File Structuring so each component will have it's own folder containing relevant files:
+    (example:)
+    ComponentFolder>>
+    Component.jsx
+    Component.css
 
 #### PostMVP
 
@@ -92,4 +96,3 @@ Creating an app for subject matter experts to connect to potential students for 
     Run risk of ineffective time usage
     Getting stuck and not seeking help
     Unfamiliarity with branch development and handling merge errors
-
