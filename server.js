@@ -4,6 +4,8 @@ const cors = require("cors");
 const db = require("./db");
 const routes = require("./routes");
 
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
 const app = express();
 const PORT = process.env.PORT || 4567
 //Middleware
@@ -13,6 +15,6 @@ app.use(logger("dev"));
 //
 app.use('/api')
 
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
