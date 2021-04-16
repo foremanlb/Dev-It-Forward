@@ -1,6 +1,6 @@
 const db = require("../db/index");
 const Tutor = require("../models/tutor");
-const User = require("../models/tutor");
+const User = require("../models/user");
 
 db.on("error", console.error.bind(console, "Mongo Connection Error"));
 
