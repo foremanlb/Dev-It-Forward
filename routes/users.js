@@ -7,7 +7,7 @@ router.post('/sign-up',signUp)
 router.get('/users',getUsers);
 router.get('/users/:id',getUser);
 router.put('/password-change/:id',changePassword);
-router.delete('/users/:id',restrict,deleteUser)
+router.delete('/users/:id',restrict,deleteUser);
 
 
 
