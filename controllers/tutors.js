@@ -2,10 +2,6 @@ const Tutor = require("../models/tutor.js");
 const db = require("../db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-<<<<<<< HEAD
-const user = require('../models/user.js');
-=======
->>>>>>> aadb7441dcb6aef025e3a65efb0ac7e368a4a140
 
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
@@ -23,7 +19,6 @@ const verify = async (req, res) => {
   } catch (error) {
     res.status(401).send("Validation Error");
   }
-<<<<<<< HEAD
 }
 
 //Sign Up
@@ -47,8 +42,7 @@ const signUp = async (req, res) => {
     return res.status(400).json({error: error.message})
   }
 }
-=======
-};
+;
 
 const signIn = async (req, res) => {
   try {
@@ -76,4 +70,3 @@ const signIn = async (req, res) => {
 };
 
 module.exports = { verify, signIn };
->>>>>>> aadb7441dcb6aef025e3a65efb0ac7e368a4a140
