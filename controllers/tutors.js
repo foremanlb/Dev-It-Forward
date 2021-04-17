@@ -42,7 +42,6 @@ const signUp = async (req, res) => {
     return res.status(400).json({error: error.message})
   }
 }
-;
 
 const signIn = async (req, res) => {
   try {
