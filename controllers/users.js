@@ -48,8 +48,12 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req,res) => {
     try{
         const {id} = req.params;
-        await User.findByIdAndDelete(id)
-        return res.status(200).json({message: "User Successfully Deleted"})
+        const deletedUser = await User.findByIdAndDelete(id);
+        if (deletedUser) {
+             return res.status(200).json({message: "User Successfully Deleted"})
+        } else {
+            res.status(404).send("User not found");
+        }
     } catch (error) {
         return res.status(500).json({error: error.message});
     }
@@ -84,10 +88,30 @@ const changePassword = async (req, res) =>{
       }
     };
 
+const signUp = async (req, res) => {
+  
+  try {
+    const { username, email, password } = req.body;
+    const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
+    const user = new User({ username, email, password_digest });
+    await user.save();
+    const payload = {
+      username: user.username,
+      email: user.email
+
+    };
+    const token = jwt.sign(payload, TOKEN_KEY);
+    return res.status(201).json({ token});
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+
+};
 
 module.exports = {
     getUsers,
     getUser,
     deleteUser,
     changePassword,
-};
+    signUp,
+}

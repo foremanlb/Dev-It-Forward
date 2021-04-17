@@ -19,7 +19,30 @@ const verify = async (req, res) => {
   } catch (error) {
     res.status(401).send("Validation Error");
   }
-};
+}
+
+//Sign Up
+const signUp = async (req, res) => {
+  try {
+    const { username, email, hourlyRate, programmingLanguage, description, password } = req.body
+    const password_digest = await bcrypt.hash(password, SALT_ROUNDS)
+    
+    const tutor = new Tutor({ username, email, hourlyRate, programmingLanguage, description, password_digest })
+    
+    await tutor.save()
+    const payload = {
+      username: tutor.username,
+      email: tutor.email
+    }
+
+    const token = jwt.sign(payload, TOKEN_KEY)
+
+    return res.status(201).json({token})
+  } catch (error) {
+    return res.status(400).json({error: error.message})
+  }
+}
+;
 
 const signIn = async (req, res) => {
   try {
