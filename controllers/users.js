@@ -25,7 +25,7 @@ const getUsers = async (req, res)=>{
 const getUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const user = await User.findById {id};
+        const user = await User.findById(id);s
         res.status(200).json(user)
     } catch (error) {
         res.status(500).json({error: error.message});
@@ -84,6 +84,8 @@ const changePassword = async (req, res) =>{
         return res.status(400).json({ error: error.message });
       }
     };
+
+
 module.exports = {
     getUsers,
     getUser,
