@@ -2,14 +2,13 @@ const User = require('../models/user.js')
 const db = require('../db')
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { findByIdAndUpdate } = require('../models/user.js');
 
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
-
+s
 //GetUsers
 
 const getUsers = async (req, res)=>{
