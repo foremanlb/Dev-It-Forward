@@ -50,9 +50,9 @@ const deleteUser = async (req,res) => {
         const {id} = req.params;
         const deletedUser = await User.findByIdAndDelete(id);
         if (deletedUser) {
-             return res.status(200).json({message: "User Successfully Deleted"})
+          return res.status(200).json({message: "User Successfully Deleted"})
         } else {
-            res.status(404).send("User not found");
+          return res.status(404).send("User not found");
         }
     } catch (error) {
         return res.status(500).json({error: error.message});
@@ -108,11 +108,34 @@ const signUp = async (req, res) => {
 
 };
 
+const signIn = async (req, res) => {
+  try {
+    const { username, password } = req.body
+    const user = await User.findOne({ username: username })
+    if (user) {
+      if (await bcrypt.compare(password, user.password_digest)) {
+        const payload = {
+          username: user.username,
+          email: user.email
+        }
+        const token = jwt.sign(payload, TOKEN_KEY)
+        return res.status(200).json({payload, token})
+      } 
+    }else {
+      return res.status(401).send('User does not exist')
+    }
+  } catch (error) {
+    return res.status(500).json({error: error.message})
+  }
+}
+
+
 module.exports = {
-    getUsers,
-    getUser,
-    deleteUser,
-    changePassword,
-    updateUser,
-    signUp,
+  getUsers,
+  getUser,
+  updateUser,
+  deleteUser,
+  changePassword,
+  signUp,
+  signIn,
 }
