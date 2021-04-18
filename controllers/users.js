@@ -131,7 +131,6 @@ const signIn = async (req, res) => {
 
 
 module.exports = {
-<<<<<<< HEAD
   getUsers,
   getUser,
   updateUser,
@@ -139,12 +138,4 @@ module.exports = {
   changePassword,
   signUp,
   signIn,
-=======
-    getUsers,
-    getUser,
-    deleteUser,
-    changePassword,
-    updateUser,
-    signUp,
->>>>>>> f423875022faf2745f494d5729aadccb7d057760
 }
