@@ -4,11 +4,11 @@ const restrict = require("../helpers/restrict.js");
 const router = Router();
 
 router.post('/sign-up',signUp)
-router.get('/users',getUsers);
-router.get('/users/:id',getUser);
+router.get('/',getUsers);
+router.get('/:id',getUser);
 router.put('/password-change/:id',changePassword);
-router.put('/users/:id', restrict, updateUser);
-router.delete('/users/:id',restrict,deleteUser);
+router.put('/:id', restrict, updateUser);
+router.delete('/:id',restrict,deleteUser);
 
 
 
