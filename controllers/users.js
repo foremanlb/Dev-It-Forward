@@ -7,7 +7,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
-s;
+
 //GetUsers
 
 const getUsers = async (req, res) => {
@@ -125,4 +125,5 @@ module.exports = {
   changePassword,
   updateUser,
   signUp,
+  verify,
 };
