@@ -3,7 +3,7 @@ const { signUp } = require("../controllers/tutors.js")
 const restrict = require("../helpers/restrict.js")
 
 const router = Router()
-router.put("/password-change/:id,changePassword");
+router.put('/password-change/:id',changePassword);
 router.get("/", getTutors);
 router.get("/", getTutor);
 router.put("/:id", restrict, updateTutor);
