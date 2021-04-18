@@ -7,7 +7,15 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
-
+//Get all Tutors
+const getTutors = async (req, res) => {
+  try {
+    const tutors = await Tutor.find({});
+    res.status(200).json(tutors);
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+};
 //Verify
 const verify = async (req, res) => {
   try {
