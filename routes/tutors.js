@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { signUp } = require("../controllers/tutors.js")
+const { signUp,getTutors,getTutor,updateTutor,deleteTutor } = require("../controllers/tutors.js")
 const restrict = require("../helpers/restrict.js")
 
 const router = Router()
