@@ -127,6 +127,27 @@ const signIn = async (req, res) => {
   }
 };
 
+const signIn = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username: username });
+    if (user) {
+      if (await bcrypt.compare(password, user.password_digest)) {
+        const payload = {
+          username: user.username,
+          email: user.email,
+        };
+        const token = jwt.sign(payload, TOKEN_KEY);
+        return res.status(200).json({ payload, token });
+      }
+    } else {
+      return res.status(401).send("User does not exist");
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getUsers,
   getUser,
