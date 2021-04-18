@@ -68,8 +68,34 @@ const signIn = async (req, res) => {
   }
 };
 
-module.exports = {
-  verify,
-  signIn,
-  signUp
+const changePassword = async (req, res) => {
+  
+  try {
+    let tutor = await Tutor.findById(req.params.id);
+    const { newPassword, oldPassword } = req.body;
+    if (await bcrypt.compare(oldPassword, tutor.password_digest)) {
+      const password_digest = await bcrypt.hash(newPassword, SALT_ROUNDS);
+      tutor = await Tutor.findByIdAndUpdate(
+        req.params.id,
+        { password_digest: password_digest },
+        { new: true }
+      );
+      const payload = {
+        id: tutor._id,
+        username: tutor.username,
+        email: tutor.email,
+      };
+      const token = jwt.sign(payload, TOKEN_KEY);
+      return res.status(201).json({ tutor, token });
+    }
+    else {
+      return res.status(403).send("Invalid password")
+  
+    }
+  } catch (error) {
+    return res.status(400).json({ error: error.message })
+  }
 };
+
+
+module.exports = { verify, signIn,changePassword };
