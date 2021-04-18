@@ -84,13 +84,13 @@ const changePassword = async (req, res) => {
       const payload = {
         id: tutor._id,
         username: tutor.username,
-        email: user.email,
+        email: tutor.email,
       };
       const token = jwt.sign(payload, TOKEN_KEY);
-      return res.status(201).json({ user, token });
+      return res.status(201).json({ tutor, token });
     }
     else {
-      return res.status(403).send("wrong password")
+      return res.status(403).send("Invalid password")
   
     }
   } catch (error) {
