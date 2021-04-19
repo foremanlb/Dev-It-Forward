@@ -10,6 +10,7 @@ const {
 } = require("../controllers/users.js");
 
 const restrict = require("../helpers/restrict.js");
+
 const router = Router();
 
 router.post("/sign-up", signUp);
