@@ -15,7 +15,7 @@ const getUsers = async (req, res) => {
     const users = await User.find({});
     return res.status(200).json(users);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 };
 
