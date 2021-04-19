@@ -30,6 +30,34 @@ const getTutor = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+//Update Tutor
+const updateTutor = async (req, res) => {
+  
+  try {
+    const tutor = await Tutor.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    return res.status(200).send(`${tutor.name} was updated`);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+const deleteTutor = async (req, res) => {
+ try {
+   const deletedTutor = await Tutor.findByIdAndDelete(req.params.id);
+   if (deletedTutor) {
+     return res.status(200).send(" Tutor deleted")
+   }
+   else {
+     return res.status(404).send("Tutor not found")
+   }
+ } catch (error) {
+   return res.status(500).json({error: error.message})
+ }
+
+}
 //Verify
 const verify = async (req, res) => {
   try {
@@ -120,4 +148,7 @@ const changePassword = async (req, res) => {
 };
 
 
-module.exports = { verify, signIn,changePassword };
+module.exports = {
+  verify, signIn, changePassword, getTutors, getTutor,
+  updateTutor,deleteTutor
+};
