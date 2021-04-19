@@ -127,24 +127,15 @@ const signIn = async (req, res) => {
   }
 };
 
-const signIn = async (req, res) => {
+const verify = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username: username });
-    if (user) {
-      if (await bcrypt.compare(password, user.password_digest)) {
-        const payload = {
-          username: user.username,
-          email: user.email,
-        };
-        const token = jwt.sign(payload, TOKEN_KEY);
-        return res.status(200).json({ payload, token });
-      }
-    } else {
-      return res.status(401).send("User does not exist");
+    const token = req.headers.authorization.split(" ")[1];
+    const payload = jwt.verify(token, TOKEN_KEY);
+    if (payload) {
+      return res.json(payload);
     }
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(401).send("Not authorized");
   }
 };
 
@@ -156,4 +147,5 @@ module.exports = {
   changePassword,
   signUp,
   signIn,
+  verify,
 };
