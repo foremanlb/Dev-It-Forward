@@ -8,6 +8,7 @@ const {
   signUp,
   updateUser,
 } = require("../controllers/users.js");
+
 const restrict = require("../helpers/restrict.js");
 const router = Router();
 
