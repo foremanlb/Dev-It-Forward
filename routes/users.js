@@ -7,6 +7,7 @@ const {
   changePassword,
   signUp,
   updateUser,
+  signIn,
 } = require("../controllers/users.js");
 
 const restrict = require("../helpers/restrict.js");
@@ -20,5 +21,6 @@ router.put("/password-change/:id", changePassword);
 router.put("/:id", restrict, updateUser);
 router.delete("/:id", restrict, deleteUser);
 router.get("/verify", verify);
+router.post("/sign-in", signIn);
 
 module.exports = router;

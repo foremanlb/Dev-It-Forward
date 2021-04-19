@@ -7,6 +7,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
+
 //Get all Tutors
 const getTutors = async (req, res) => {
   try {
@@ -24,12 +25,13 @@ const getTutor = async (req, res) => {
     if (tutor) {
       return res.status(200).json(tutor);
     } else {
-      return res.status(404).json({ error: " No tutor found" });
+      return res.status(404).json({ error: "No tutor found" });
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 };
+
 //Update Tutor
 const updateTutor = async (req, res) => {
   
@@ -44,20 +46,22 @@ const updateTutor = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-const deleteTutor = async (req, res) => {
- try {
-   const deletedTutor = await Tutor.findByIdAndDelete(req.params.id);
-   if (deletedTutor) {
-     return res.status(200).send(" Tutor deleted")
-   }
-   else {
-     return res.status(404).send("Tutor not found")
-   }
- } catch (error) {
-   return res.status(500).json({error: error.message})
- }
 
-}
+//Delete Tutor
+const deleteTutor = async (req, res) => {
+  try {
+    const deletedTutor = await Tutor.findByIdAndDelete(req.params.id);
+    if (deletedTutor) {
+      return res.status(200).send("Tutor deleted")
+    }
+    else {
+      return res.status(404).send("Tutor not found")
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+};
+
 //Verify
 const verify = async (req, res) => {
   try {
@@ -67,9 +71,9 @@ const verify = async (req, res) => {
       return res.json(payload);
     }
   } catch (error) {
-    res.status(401).send("Validation Error");
+    return res.status(401).send("Validation Error");
   }
-}
+};
 
 //Sign Up
 const signUp = async (req, res) => {
@@ -87,12 +91,13 @@ const signUp = async (req, res) => {
 
     const token = jwt.sign(payload, TOKEN_KEY)
 
-    return res.status(201).json({token})
+    return res.status(201).json({ token })
   } catch (error) {
-    return res.status(400).json({error: error.message})
+    return res.status(400).json({ error: error.message })
   }
-}
+};
 
+//Sign In
 const signIn = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -150,5 +155,5 @@ const changePassword = async (req, res) => {
 
 module.exports = {
   verify, signIn, changePassword, getTutors, getTutor,
-  updateTutor,deleteTutor
+  updateTutor,deleteTutor ,signUp
 };
