@@ -6,7 +6,7 @@ const routes = require("./routes");
 
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
-const app = express();
+const app = express()
 const PORT = process.env.PORT || 4567
 //Middleware
 app.use(cors());
