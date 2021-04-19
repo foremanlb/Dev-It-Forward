@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = "securetoken";
+const TOKEN_KEY = "srCbL:+]7*M.PT^E";
 
 //GetUsers
 const getUsers = async (req, res) => {
