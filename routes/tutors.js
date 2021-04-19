@@ -14,7 +14,7 @@ const restrict = require("../helpers/restrict.js");
 const router = Router();
 router.put("/password-change/:id", changePassword);
 router.get("/", getTutors);
-router.get("/", getTutor);
+router.get("/:id", getTutor);
 router.put("/:id", restrict, updateTutor);
 router.delete("/:id", restrict, deleteTutor);
 router.post("/sign-up", signUp);
