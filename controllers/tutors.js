@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = "securetoken";
+const TOKEN_KEY = "rCbL:+]7*M.PT^E";
 
 //GetTutors
 const getTutors = async (req, res) => {
@@ -17,6 +17,7 @@ const getTutors = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+
 // GetTutor
 const getTutor = async (req, res) => {
   try {
@@ -34,7 +35,6 @@ const getTutor = async (req, res) => {
 
 //Update Tutor
 const updateTutor = async (req, res) => {
-  
   try {
     const tutor = await Tutor.findByIdAndUpdate(
       req.params.id,
@@ -63,7 +63,7 @@ const deleteTutor = async (req, res) => {
 };
 
 //Verify
-const verify = async (req, res) => {
+const verify = (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
     const payload = jwt.verify(token, TOKEN_KEY);
@@ -80,17 +80,13 @@ const signUp = async (req, res) => {
   try {
     const { username, email, hourlyRate, programmingLanguage, description, password } = req.body
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS)
-    
     const tutor = new Tutor({ username, email, hourlyRate, programmingLanguage, description, password_digest })
-    
     await tutor.save()
     const payload = {
       username: tutor.username,
       email: tutor.email
     }
-
     const token = jwt.sign(payload, TOKEN_KEY)
-
     return res.status(201).json({ token })
   } catch (error) {
     return res.status(400).json({ error: error.message })

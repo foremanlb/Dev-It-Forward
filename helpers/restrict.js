@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const TOKEN_KEY = "securetoken";
+const TOKEN_KEY = "srCbL:+]7*M.PT^E";
 
 const restrict = (req, res, next) => {
   try {
