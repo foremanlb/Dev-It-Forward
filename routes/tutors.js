@@ -7,6 +7,7 @@ const {
   updateTutor,
   deleteTutor,
   changePassword,
+  verify,
 } = require("../controllers/tutors.js");
 const restrict = require("../helpers/restrict.js");
 
@@ -18,5 +19,6 @@ router.put("/:id", restrict, updateTutor);
 router.delete("/:id", restrict, deleteTutor);
 router.post("/sign-up", signUp);
 router.post("/sign-in", signIn);
+router.get("/verify", verify);
 
 module.exports = router;
