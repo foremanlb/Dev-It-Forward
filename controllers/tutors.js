@@ -25,7 +25,7 @@ const getTutor = async (req, res) => {
     if (tutor) {
       return res.status(200).json(tutor);
     } else {
-      return res.status(404).send({ error: "No tutor found" });
+      return res.status(404).json({ error: "No tutor found" });
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });
