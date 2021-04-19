@@ -8,5 +8,6 @@ router.get("/", getTutors);
 router.get("/", getTutor);
 router.put("/:id", restrict, updateTutor);
 router.delete("/:id", restrict, deleteTutor);
+router.post('/sign-up', signUp)
 
 module.exports = router;
