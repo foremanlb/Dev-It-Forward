@@ -61,7 +61,6 @@ const deleteUser = async (req, res) => {
 };
 
 //Change-Password
-
 const changePassword = async (req, res) => {
   try {
     let user = await User.findById(req.params.id);
