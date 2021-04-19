@@ -41,7 +41,7 @@ const updateTutor = async (req, res) => {
       req.body,
       { new: true }
     );
-    return res.status(200).send(`${tutor.name} was updated`);
+    return res.status(200).send(`${tutor.username} was updated`);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
@@ -108,15 +108,13 @@ const signIn = async (req, res) => {
           username: tutor.username,
           email: tutor.email,
         };
-
         const token = jwt.sign(payload, TOKEN_KEY);
-
         return res.status(200).json({ payload, token });
-      } else {
-        res.status(401).send("Invalid Credentials. Try again.");
+      }else {
+        return res.status(401).send("Invalid Credentials. Try again.");
       }
     } else {
-      res.status(400).send("Tutor does not exist");
+      return res.status(400).send("Tutor does not exist");
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });

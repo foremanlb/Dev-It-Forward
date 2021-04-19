@@ -129,9 +129,11 @@ const signIn = async (req, res) => {
         };
         const token = jwt.sign(payload, TOKEN_KEY);
         return res.status(200).json({ payload, token });
+      } else {
+        return res.status(401).send("Invalid Credentials")
       }
     } else {
-      return res.status(401).send("User does not exist");
+      return res.status(400).send("User does not exist");
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });
