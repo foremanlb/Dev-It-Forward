@@ -8,7 +8,7 @@ mongoose
   .then(() => console.log('MongoDB Connected!'))
   .catch((error) => console.log(error))
 
-mongoose.set('debug', true)
+
 let db = mongoose.connection
 
 module.exports = db
