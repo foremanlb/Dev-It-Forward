@@ -48,10 +48,10 @@ const deleteTutor = async (req, res) => {
  try {
    const deletedTutor = await Tutor.findByIdAndDelete(req.params.id);
    if (deletedTutor) {
-     return res.status(200).send (" Tutor deleted")
+     return res.status(200).send(" Tutor deleted")
    }
    else {
-     res.status(404).send("Tutor not found")
+     return res.status(404).send("Tutor not found")
    }
  } catch (error) {
    return res.status(500).json({error: error.message})
