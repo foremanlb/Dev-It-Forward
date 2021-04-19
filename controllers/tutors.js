@@ -7,7 +7,29 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
-
+//Get all Tutors
+const getTutors = async (req, res) => {
+  try {
+    const tutors = await Tutor.find({});
+    return res.status(200).json(tutors);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+// Get a Single tutor
+const getTutor = async (req, res) => {
+  try {
+    const { id } = req.params;
+    let tutor = await Tutor.findById(id);
+    if (tutor) {
+      return res.status(200).json(tutor);
+    } else {
+      return res.status(404).json({ error: " No tutor found" });
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
 //Verify
 const verify = async (req, res) => {
   try {
