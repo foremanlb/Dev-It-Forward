@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4567
 //Middleware
 app.use(cors());
-app.use(express.jason());
+app.use(express.json());
 app.use(logger("dev"));
 //
 app.use('/api',routes)

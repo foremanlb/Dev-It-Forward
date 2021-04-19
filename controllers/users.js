@@ -9,7 +9,6 @@ const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
 
 //GetUsers
-
 const getUsers = async (req, res) => {
   try {
     const users = await User.find({});
@@ -31,7 +30,6 @@ const getUser = async (req, res) => {
 };
 
 //UpdateUser
-
 const updateUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -45,7 +43,6 @@ const updateUser = async (req, res) => {
 };
 
 //DeleteUser
-
 const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -88,6 +85,7 @@ const changePassword = async (req, res) => {
   }
 };
 
+//SignUp
 const signUp = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -105,6 +103,7 @@ const signUp = async (req, res) => {
   }
 };
 
+//Verify
 const verify = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
@@ -117,6 +116,7 @@ const verify = async (req, res) => {
   }
 };
 
+//Sign In
 const signIn = async (req, res) => {
   try {
     const { username, password } = req.body;
