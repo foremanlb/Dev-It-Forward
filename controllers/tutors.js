@@ -7,7 +7,29 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
-
+//Get all Tutors
+const getTutors = async (req, res) => {
+  try {
+    const tutors = await Tutor.find({});
+    return res.status(200).json(tutors);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+// Get a Single tutor
+const getTutor = async (req, res) => {
+  try {
+    const { id } = req.params;
+    let tutor = await Tutor.findById(id);
+    if (tutor) {
+      return res.status(200).json(tutor);
+    } else {
+      return res.status(404).json({ error: " No tutor found" });
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
 //Verify
 const verify = async (req, res) => {
   try {
@@ -42,7 +64,6 @@ const signUp = async (req, res) => {
     return res.status(400).json({error: error.message})
   }
 }
-;
 
 const signIn = async (req, res) => {
   try {
@@ -69,4 +90,34 @@ const signIn = async (req, res) => {
   }
 };
 
-module.exports = { verify, signIn };
+const changePassword = async (req, res) => {
+  
+  try {
+    let tutor = await Tutor.findById(req.params.id);
+    const { newPassword, oldPassword } = req.body;
+    if (await bcrypt.compare(oldPassword, tutor.password_digest)) {
+      const password_digest = await bcrypt.hash(newPassword, SALT_ROUNDS);
+      tutor = await Tutor.findByIdAndUpdate(
+        req.params.id,
+        { password_digest: password_digest },
+        { new: true }
+      );
+      const payload = {
+        id: tutor._id,
+        username: tutor.username,
+        email: tutor.email,
+      };
+      const token = jwt.sign(payload, TOKEN_KEY);
+      return res.status(201).json({ tutor, token });
+    }
+    else {
+      return res.status(403).send("Invalid password")
+  
+    }
+  } catch (error) {
+    return res.status(400).json({ error: error.message })
+  }
+};
+
+
+module.exports = { verify, signIn,changePassword };
