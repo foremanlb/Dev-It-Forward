@@ -11,7 +11,7 @@ const TOKEN_KEY = "securetoken";
 const getTutors = async (req, res) => {
   try {
     const tutors = await Tutor.find({});
-    res.status(200).json(tutors);
+    return res.status(200).json(tutors);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
