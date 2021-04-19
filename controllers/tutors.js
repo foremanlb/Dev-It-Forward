@@ -8,7 +8,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "securetoken";
 
-//Get all Tutors
+//GetTutors
 const getTutors = async (req, res) => {
   try {
     const tutors = await Tutor.find({});
@@ -17,7 +17,7 @@ const getTutors = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-// Get a Single tutor
+// GetTutor
 const getTutor = async (req, res) => {
   try {
     const { id } = req.params;
@@ -123,6 +123,7 @@ const signIn = async (req, res) => {
   }
 };
 
+//Change Password
 const changePassword = async (req, res) => {
   
   try {
@@ -154,6 +155,12 @@ const changePassword = async (req, res) => {
 
 
 module.exports = {
-  verify, signIn, changePassword, getTutors, getTutor,
-  updateTutor,deleteTutor ,signUp
+  verify,
+  signIn,
+  changePassword,
+  getTutors,
+  getTutor,
+  updateTutor,
+  deleteTutor,
+  signUp
 };
