@@ -9,7 +9,7 @@ const getToken = async () => {
 let apiUrl;
 
 const apiUrls = {
-  production: "https://dev-it-forward-db.herokuapp.com/",
+  production: "https://dev-it-forward-db.herokuapp.com/api",
   development: "http://localhost:4567/api",
 };
 
