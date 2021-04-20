@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import { useEffect, useState } from 'react';
 import { verifyUser } from "./services/user.js";
 import { Switch, Route } from "react-router-dom";
