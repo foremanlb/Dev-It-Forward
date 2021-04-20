@@ -1,4 +1,4 @@
-import { sigIn } from "../../services/users.js";
+import { signIn } from "../../services/users.js";
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function Landing() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await sigIn(input);
+    await signIn(input);
     <Redirect to="/tutors"></Redirect>;
     // do i need verify here as well?
   };
