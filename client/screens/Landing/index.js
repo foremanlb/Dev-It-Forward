@@ -1,6 +1,6 @@
 import { signIn } from "../../services/users.js";
 import { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Landing() {
   let defaultInput = {
@@ -8,16 +8,16 @@ export default function Landing() {
     password: "",
   };
   const [input, setInput] = useState(defaultInput);
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     await signIn(input);
-    <Redirect to="/tutors"></Redirect>;
-    // do i need verify here as well?
+    history.push("/tutors");
   };
 
   function handleClick(event) {
-    <Redirect to="/sign-up"></Redirect>;
+    history.push("/sign-up");
   }
 
   function handleChange(event) {
