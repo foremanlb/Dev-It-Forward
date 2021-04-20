@@ -1,26 +1,31 @@
 import { useEffect, useState } from 'react';
-import { verifyUser } from "./services/user.js";
-import { Switch, Route } from "react-router-dom";
+import { verifyUser } from "./services/user.js.js";
+import { Route } from "react-router-dom";
+import { verifyTutor } from './services/tutors'
+import { Navbar } from './components/Navbar/Navbar.jsx'
 
 function App() {
-   const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentTutor, setCurrentTutor] = useState(null)
 
-  // const logOut = async () => {
-  //   await localStorage.clear();
-  //   setCurrentUser(null);
-    
-  // };
-  // useEffect(() => {
-  //   requestVerification();
-  // }, []);
-  // const requestVerification = async () => {
-  //   const user = await verifyUser();
-  //   setCurrentUser(user)
-  // };
+  useEffect(() => {
+    verifiedUser();
+    verifiedTutor()
+  }, []);
+
+  const verifiedUser = async () => {
+    const user = await verifyUser();
+    setCurrentUser(user)
+  };
+
+  const verifiedTutor = async () => {
+    const tutor = await verifyTutor()
+    setCurrentTutor(tutor)
+  }
 
   return (
     <div className="App">
-      <switch>
+      <Navbar />
         <Route exact path="/">
           
         </Route>
@@ -29,11 +34,7 @@ function App() {
         </Route>
         <Route path="/sign-in">
           
-      </Route>
-
-
-      </switch>
-      
+      </Route>      
     </div>
   );
 }
