@@ -65,7 +65,7 @@ export const deleteTutor = async (id) => {
 export const changeTutorPassword = async (id,data) => {
   const token = await localStorage.get("token");
   if (token) {
-    const updatedPassword = await api.put(`/tutors/password-change/${id}`)
+    const updatedPassword = await api.put(`/tutors/password-change/${id}`, data)
     return updatedPassword;
   }
 };
