@@ -1,80 +1,33 @@
-import { signIn } from "../../services/users.js";
-import { signIn } from "../../services/tutors.js";
 import { useState } from "react";
+import TutorSignIn from '../../components/TutorSignIn'
+import UsersSignIn from '../../components/UsersSignIn'
 import { useHistory } from "react-router-dom";
 
 export default function Landing() {
-  // let defaultInput = {
-  //   username: "",
-  //   password: "",
-  // };
-  // const [input, setInput] = useState(defaultInput);
-  // const history = useHistory();
+  let defaultInput = {
+    username: "",
+    password: "",
+  };
+  const [input, setInput] = useState(defaultInput);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   await signIn(input); //rename to signInTutor and signInUser
-  //   history.push("/tutors");
-  // };
+  const history = useHistory();
 
-  // function handleClick(event) {
-  //   history.push("/sign-up");
-  // }
-
-  // function handleChange(event) {
-  //   let { id, value } = event.target;
-  //   setInput((prevInput) => ({
-  //     ...prevInput,
-  //     [id]: value,
-  //   }));
-  // }
+  function handleClick(event) {
+    history.push("/sign-up");
+  }
 
   return (
     <div>
       <h1 className="hero-image-header-text">Level up with a coding tutor</h1>
       <div className="hero-image-container">
-        <img className="hero-image" src="../../assets/hero.jpeg" alt="image" />
+        <img className="hero-image" src="../../assets/hero.jpeg" alt="laptop" />
       </div>
       <p className="hero-image-paragraph-text">
         1-on-1 coaching from someone that has gone through the same bootcamp you
         are going through. Debugging, career advice, and much more.
       </p>
-      <form onSubmit={handleSubmit}>
-        <h1>User Sign-In</h1>
-        <label htmlFor="username" placeholder="username"></label>
-        <input
-          type="text"
-          id="username"
-          onChange={handleChange}
-          value={input.username}
-        ></input>
-        <label htmlFor="password" placeholder="password"></label>
-        <input
-          type="text"
-          id="password"
-          onChange={handleChange}
-          value={input.password}
-        ></input>
-        <button type="submit">Sign-In</button>
-      </form>
-      {/* <form onSubmit={handleSubmit}>
-        <h1>Tutor Sign-In</h1>
-        <label htmlFor="username" placeholder="username"></label>
-        <input
-          type="text"
-          id="username"
-          onChange={handleChange}
-          value={input.username}
-        ></input>
-        <label htmlFor="password" placeholder="password"></label>
-        <input
-          type="text"
-          id="password"
-          onChange={handleChange}
-          value={input.password}
-        ></input>
-        <button type="submit">Sign-In</button>
-      </form> */}
+      <TutorSignIn input={input} setInput={setInput} />
+      <UserSignIn input={input} setInput={setInput} />
       <button onClick={handleClick}>Sign-Up</button>
     </div>
   );
