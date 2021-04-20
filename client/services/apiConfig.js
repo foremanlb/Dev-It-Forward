@@ -20,18 +20,18 @@ if (window.location.hostname === "localhost") {
 }
 
 const api = axios.create({
-  baseURL = apiUrl,
-})
+  baseURL: apiUrl,
+});
 
 api.interceptors.request.use(
   async (options) => {
-    options.headers["Authorization"] = await getToken()
-    return options 
+    options.headers["Authorization"] = await getToken();
+    return options;
   },
   (error) => {
     console.log("Request Error:", error);
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
+);
 
-export default api
+export default api;
