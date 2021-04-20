@@ -27,7 +27,7 @@ export default function Landing() {
         are going through. Debugging, career advice, and much more.
       </p>
       <TutorSignIn input={input} setInput={setInput} />
-      <UserSignIn input={input} setInput={setInput} />
+      <UsersSignIn input={input} setInput={setInput} />
       <button onClick={handleClick}>Sign-Up</button>
     </div>
   );
