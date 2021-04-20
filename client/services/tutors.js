@@ -3,8 +3,7 @@ import api from "./apiConfig"
 export const getTutors = async () => {
   try {
     const response = await api.get("/tutors")
-  const tutors = response.data;
-  return tutors;
+   return response.data;
   } catch (error) {
     throw error;
   }
@@ -26,18 +25,18 @@ export const updateTutor = async (id, data) => {
   return updatedTutor;
 };
 
-export const signUp = async (credentials) => {
+export const signupTutor = async (credentials) => {
   try {
-    const response = await api.post("/sign-up", credentials);
+    const response = await api.post("/tutors/sign-up", credentials);
     localStorage.setItem("token", response.data.token)
   } catch (error) {
     throw error;
   }
 };
 
-export const signIn = async (credentials) => {
+export const signinTutor = async (credentials) => {
   try {
-    const response = await api.post("/sign-in", credentials);
+    const response = await api.post("/tutors/sign-in", credentials);
     localStorage.setItem("token", response.data.token);
     return response.data;
   } catch (error) {
@@ -48,7 +47,7 @@ export const signIn = async (credentials) => {
 export const verifyTutor = async () => {
   const token = await localStorage.getItem("token");
   if (token) {
-    const response = await api.get("/verify");
+    const response = await api.get("tutors/verify");
     return response.data;
   } else {
     return false;
@@ -58,15 +57,15 @@ export const verifyTutor = async () => {
 export const deleteTutor = async (id) => {
   const token = await localStorage.get("token");
   if (token) {
-    const deletedTutor = await apt.delete(`/${id}`)
+    const deletedTutor = await api.delete(`tutors/${id}`)
     return deletedTutor;
   }
 };
 
-export const changePassword = async (id,data) => {
+export const changeTutorpassword = async (id,data) => {
   const token = await localStorage.get("token");
   if (token) {
-    const updatedPassword = await api.put(`/password-change/${id}`)
+    const updatedPassword = await api.put(`tutors/password-change/${id}`)
     return updatedPassword;
   }
 };
