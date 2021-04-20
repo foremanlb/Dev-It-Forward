@@ -47,7 +47,7 @@ export const signinTutor = async (credentials) => {
 export const verifyTutor = async () => {
   const token = await localStorage.getItem("token");
   if (token) {
-    const response = await api.get("tutors/verify");
+    const response = await api.get("/tutors/verify");
     return response.data;
   } else {
     return false;
@@ -57,7 +57,7 @@ export const verifyTutor = async () => {
 export const deleteTutor = async (id) => {
   const token = await localStorage.get("token");
   if (token) {
-    const deletedTutor = await api.delete(`tutors/${id}`)
+    const deletedTutor = await api.delete(`/tutors/${id}`)
     return deletedTutor;
   }
 };
@@ -65,7 +65,7 @@ export const deleteTutor = async (id) => {
 export const changeTutorpassword = async (id,data) => {
   const token = await localStorage.get("token");
   if (token) {
-    const updatedPassword = await api.put(`tutors/password-change/${id}`)
+    const updatedPassword = await api.put(`/tutors/password-change/${id}`)
     return updatedPassword;
   }
 };
