@@ -1,15 +1,22 @@
 import api from "./apiConfig"
 
 export const getTutors = async () => {
-  const response = await api.get("/tutors")
+  try {
+    const response = await api.get("/tutors")
   const tutors = response.data;
   return tutors;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getTutor = async (id) => {
-  const response = await api.get(`/tutors/${id}`)
-  const tutor = response.data;
-  return tutor;
+  try {
+    const response = await api.get(`/tutors/${id}`)
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 
 };
 
@@ -23,8 +30,8 @@ export const signUp = async (credentials) => {
   try {
     const response = await api.post("/sign-up", credentials);
     localStorage.setItem("token", response.data.token)
-  } catch (err) {
-    throw err;
+  } catch (error) {
+    throw error;
   }
 };
 
@@ -34,7 +41,7 @@ export const signIn = async (credentials) => {
     localStorage.setItem("token", response.data.token);
     return response.data;
   } catch (error) {
-    throw err;
+    throw error;
   }
 };
 
