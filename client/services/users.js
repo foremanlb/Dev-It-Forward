@@ -1,6 +1,6 @@
-import axios from "axios";
-import user from "../../models/user";
+
 import api from "./apiConfig";
+
 
 
 
@@ -40,7 +40,7 @@ export const deleteUser = async (id) => {
     res = await api.delete(`/users/${id}`);
   }
   else {
-    return res.status(200).send(`${user.name} was deleted`);
+    return res.status(200).send(`${} was deleted`);
   }
   } catch (error) {
     throw error;
@@ -54,18 +54,18 @@ export const deleteUser = async (id) => {
 
 
 
-export const signUp = async (Credential) => {
+export const signUp = async (credential) => {
   try {
-    const resp = await api.post("/users/sign-up",Credential);
+    const resp = await api.post("/users/sign-up",credential);
     localStorage.setItem("token", resp.data.token);
   } catch (error) {
     throw error;
   }
 };
 
-export const signIn = async (Credential) => {
+export const signIn = async (credential) => {
   try {
-    const resp = await api.post("/users/sign-in", Credential);
+    const resp = await api.post("/users/sign-in", credential);
     localStorage.setItem("token", resp.data.token);
     return resp.data;
   } catch (error) {
@@ -82,3 +82,11 @@ export const verifyUser = async () => {
     return false;
   }
 };
+export const changePassword = async () => {
+  
+  try {
+    let user = await api.put("")
+  } catch (error) {
+    
+  }
+}
