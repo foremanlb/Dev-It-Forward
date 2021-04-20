@@ -17,3 +17,14 @@ export const signIn = async (Credential) => {
     throw error;
   }
 }
+
+export const verifyUser = async () => {
+  const token = await localStorage.getItem("token");
+  if (token) {
+    const res = await api.get("/verify")
+    return (res.data)
+  }
+  else {
+    return false;
+  }
+};
