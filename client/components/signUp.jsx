@@ -23,12 +23,12 @@ export default function SignUp(props) {
     e.preventDefault();
     await signUp(input);
     let res = await signIn(input);
-    //
+    //props. current user 
  }
 return (
   <div>
     <h2> Header Student </h2>
-    <form onChange = {handleChange}>
+    <form onChange = {handleChange} onSubmit={handleSubmit} >
       <label>username</label>
       <input
         name="username"
