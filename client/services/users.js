@@ -50,7 +50,7 @@ export const signUp = async (credentials) => {
   }
 };
 
-export const signIn = async (credential) => {
+export const signIn = async (credentials) => {
   try {
     const resp = await api.post("/users/sign-in", credentials);
     localStorage.setItem("token", resp.data.token);
