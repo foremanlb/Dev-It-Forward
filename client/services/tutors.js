@@ -3,7 +3,7 @@ import api from "./apiConfig"
 export const getTutors = async () => {
   try {
     const response = await api.get("/tutors")
-   return response.data;
+    return response.data;
   } catch (error) {
     throw error;
   }
@@ -25,7 +25,7 @@ export const updateTutor = async (id, data) => {
   return updatedTutor;
 };
 
-export const signupTutor = async (credentials) => {
+export const signUpTutor = async (credentials) => {
   try {
     const response = await api.post("/tutors/sign-up", credentials);
     localStorage.setItem("token", response.data.token)
@@ -34,7 +34,7 @@ export const signupTutor = async (credentials) => {
   }
 };
 
-export const signinTutor = async (credentials) => {
+export const signInTutor = async (credentials) => {
   try {
     const response = await api.post("/tutors/sign-in", credentials);
     localStorage.setItem("token", response.data.token);
@@ -62,10 +62,10 @@ export const deleteTutor = async (id) => {
   }
 };
 
-export const changeTutorpassword = async (id,data) => {
+export const changeTutorPassword = async (id,data) => {
   const token = await localStorage.get("token");
   if (token) {
-    const updatedPassword = await api.put(`/tutors/password-change/${id}`)
+    const updatedPassword = await api.put(`/tutors/password-change/${id}`, data)
     return updatedPassword;
   }
 };
