@@ -26,19 +26,11 @@ export const updatedUser = async (id,user) => {
   }
 }
 export const deleteUser = async (id) => {
-  try{
-    const token = localStorage.getItem("token")
-    let res;
+  const token = await localStorage.get("token")
   if (token) {
-    res = await api.delete(`/users/${id}`);
+   const deletedUser = await api.delete(`/users/${id}`);
+    return deletedUser;
   }
-  else {
-    return res.status(200).send(`${} was deleted`);
-  }
-  } catch (error) {
-    throw error;
-  }
-  
 }
 
 export const signUp = async (credentials) => {
