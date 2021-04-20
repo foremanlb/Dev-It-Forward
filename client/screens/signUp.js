@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { signIn } from "../../controllers/users";
 import { signUp} from "../services/users"
 
 export default function SignUp(props) {
@@ -18,11 +19,16 @@ export default function SignUp(props) {
 
     }));
 }
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await signUp(input);
+    let res = await signIn(input);
+    //
+ }
 return (
   <div>
-    <h2> Student </h2>
-    <form>
+    <h2> Header Student </h2>
+    <form onChange = {handleChange}>
       <label>username</label>
       <input
         name="username"
@@ -44,13 +50,7 @@ return (
         value={input.password}
         placeholder = "Enter password .."
       />
-       <label>Password Confirmation</label>
-      <input
-        name="password"
-        type = "password"
-        value={input.password}
-        placeholder = "Enter password .."
-      />
+      
       <button type = "submit"></button>
 
 
