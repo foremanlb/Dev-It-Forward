@@ -10,3 +10,5 @@ export default function UserProfile(props) {
     </div>
   );
 }
+// will likely need an edit button to be able to change information for full CRUD
+// not sure how we want to go about this
