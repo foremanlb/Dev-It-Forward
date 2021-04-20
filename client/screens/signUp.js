@@ -10,9 +10,7 @@ export default function SignUp(props) {
   };
 
   const [input, setInput] = useState(defaultInput);
-  const handleChange = (event) => {
-    let {name, value} = event.
-  }
+  
 
 
 return (
