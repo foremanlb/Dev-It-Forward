@@ -33,7 +33,7 @@ export const deleteUser = async (id) => {
   }
 }
 
-export const signUp = async (credentials) => {
+export const signUpUser = async (credentials) => {
   try {
     const resp = await api.post("/users/sign-up",credentials);
     localStorage.setItem("token", resp.data.token);
@@ -42,7 +42,7 @@ export const signUp = async (credentials) => {
   }
 };
 
-export const signIn = async (credentials) => {
+export const signInUser = async (credentials) => {
   try {
     const resp = await api.post("/users/sign-in", credentials);
     localStorage.setItem("token", resp.data.token);
