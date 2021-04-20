@@ -32,11 +32,7 @@ export default function Landing() {
     <div>
       <h1 className="hero-image-header-text">Level up with a coding tutor</h1>
       <div className="hero-image-container">
-        <img
-          className="hero-image"
-          src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          alt="image"
-        />
+        <img className="hero-image" src="../../assets/hero.jpeg" alt="image" />
       </div>
       <p className="hero-image-paragraph-text">
         1-on-1 coaching from someone that has gone through the same bootcamp you
