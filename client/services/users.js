@@ -61,7 +61,7 @@ export const verifyUser = async () => {
     return false;
   }
 };
-export const changePassword = async () => {
+export const changeUserPassword = async () => {
   const token = await localStorage.getItem('token');
   if (token) {
     const res = await api.put("/users/password-change/:id");
