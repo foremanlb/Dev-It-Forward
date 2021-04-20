@@ -83,10 +83,12 @@ export const verifyUser = async () => {
   }
 };
 export const changePassword = async () => {
-  
-  try {
-    let user = await api.put("")
-  } catch (error) {
-    
+  const token = await localStorage.getItem('token');
+  if (token) {
+    const res = await api.put("/users/password-change/:id");
+    return res.data
   }
+  else
+    return false
+  
 }
