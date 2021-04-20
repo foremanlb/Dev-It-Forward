@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// token from local storage
+//token from local storage
 const getToken = async () => {
   let token = (await localStorage.getItem("token")) || null;
   return `Bearer ${token}`;
