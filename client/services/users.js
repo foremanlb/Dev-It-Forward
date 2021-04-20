@@ -1,3 +1,5 @@
+import axios from "axios";
+import user from "../../models/user";
 import api from "./apiConfig";
 
 
@@ -18,10 +20,40 @@ export const getUser = async (id) => {
     let res = await api.get(`/users/${id}`)
     return res.data
   } catch (error) {
-    
+    throw error
   }
  
 }
+export const updatedUser = async (id,user) => {
+  try {
+    let res = await api.put(`/users/${id}`, user)
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+}
+export const deleteUser = async (id) => {
+  try{
+    const token = localStorage.getItem("token")
+    let res;
+  if (token) {
+    res = await api.delete(`/users/${id}`);
+  }
+  else {
+    return res.status(200).send(`${user.name} was deleted`);
+  }
+  } catch (error) {
+    throw error;
+  }
+  
+  
+}
+
+
+
+
+
+
 export const signUp = async (Credential) => {
   try {
     const resp = await api.post("/users/sign-up",Credential);
