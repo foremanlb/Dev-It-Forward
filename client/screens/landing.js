@@ -1,32 +1,33 @@
 import { signIn } from "../../services/users.js";
+import { signIn } from "../../services/tutors.js";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function Landing() {
-  let defaultInput = {
-    username: "",
-    password: "",
-  };
-  const [input, setInput] = useState(defaultInput);
-  const history = useHistory();
+  // let defaultInput = {
+  //   username: "",
+  //   password: "",
+  // };
+  // const [input, setInput] = useState(defaultInput);
+  // const history = useHistory();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    await signIn(input);
-    history.push("/tutors");
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   await signIn(input); //rename to signInTutor and signInUser
+  //   history.push("/tutors");
+  // };
 
-  function handleClick(event) {
-    history.push("/sign-up");
-  }
+  // function handleClick(event) {
+  //   history.push("/sign-up");
+  // }
 
-  function handleChange(event) {
-    let { id, value } = event.target;
-    setInput((prevInput) => ({
-      ...prevInput,
-      [id]: value,
-    }));
-  }
+  // function handleChange(event) {
+  //   let { id, value } = event.target;
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     [id]: value,
+  //   }));
+  // }
 
   return (
     <div>
@@ -39,6 +40,7 @@ export default function Landing() {
         are going through. Debugging, career advice, and much more.
       </p>
       <form onSubmit={handleSubmit}>
+        <h1>User Sign-In</h1>
         <label htmlFor="username" placeholder="username"></label>
         <input
           type="text"
@@ -55,6 +57,24 @@ export default function Landing() {
         ></input>
         <button type="submit">Sign-In</button>
       </form>
+      {/* <form onSubmit={handleSubmit}>
+        <h1>Tutor Sign-In</h1>
+        <label htmlFor="username" placeholder="username"></label>
+        <input
+          type="text"
+          id="username"
+          onChange={handleChange}
+          value={input.username}
+        ></input>
+        <label htmlFor="password" placeholder="password"></label>
+        <input
+          type="text"
+          id="password"
+          onChange={handleChange}
+          value={input.password}
+        ></input>
+        <button type="submit">Sign-In</button>
+      </form> */}
       <button onClick={handleClick}>Sign-Up</button>
     </div>
   );
