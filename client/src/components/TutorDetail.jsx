@@ -25,9 +25,10 @@ const TutorDetail = (props) => {
       
       <div className="detail">
         <div className="tutor-user-name"> {tutor.username}</div>
-        <div className="tutor-user-name"> {tutor.username}</div>
-        <div className="tutor-user-name"> {tutor.username}</div>
-        <div className="tutor-user-name"> {tutor.username}</div>
+        <div className="tutor-email"> {tutor.email}</div>
+        <div className="tutor-hourlyrate"> {tutor.hourlyRate}</div>
+        <div className="tutor-pro-langauge"> {tutor.programmingLanguage}</div>
+        <div className="tutor-description"> {tutor.description}</div>
         
       </div>
 
