@@ -24,7 +24,7 @@ export default function SignUpUser(props) {
     e.preventDefault();
     await signUpUser(input);
     let res = await signInUser(input);
-    //props.setCurrentUser(res.payload)
+    props.setCurrentUser(res.payload)
  }
 return (
   <div>
