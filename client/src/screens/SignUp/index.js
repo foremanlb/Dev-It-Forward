@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 // import UserSignUp from '../components/UserSignUp.jsx'
-import SignUpTutor from '../../components/tutorSignUp/SignUpTutor'
+import TutorSignUp from "../../components/tutorSignUp/TutorSignUp";
 
 export default function SignUp() {
   return (
     <div>
       {/* <UserSignUp /> */}
-      <SignUpTutor />
+      <TutorSignUp />
     </div>
-  )
+  );
 }
