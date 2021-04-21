@@ -8,10 +8,9 @@ export default function tutorGallery(props) {
   const tutors = props.tutors;
 
   const renderPage = () => {
-    if (currentUser !== null || currentTutor !== null) {
+    if (currentUser || currentTutor) {
       return (
         <div>
-          <logout />
           <CardContainer tutors={tutors} />
         </div>
       );
@@ -20,5 +19,10 @@ export default function tutorGallery(props) {
     }
   };
 
-  return <div>{renderPage()}</div>;
+  return (
+    <div>
+      <button onClick={props.logout}>Sign Out</button>
+      {renderPage()}
+    </div>
+  );
 }

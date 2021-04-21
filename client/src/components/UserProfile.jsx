@@ -1,4 +1,4 @@
-import { deleteUser } from "../../services/users";
+import { deleteUser } from "../services/users";
 import { useHistory } from "react-router-dom";
 
 export default function UserProfile(props) {
@@ -12,7 +12,7 @@ export default function UserProfile(props) {
   return (
     <div>
       <h3>{`Nice to see you again, ${user.username}`}</h3>
-      <p>This the the info we have on your profile</p>
+      <p>This the info we have on your profile</p>
       <li>{`Email: ${user.email}`}</li>
       <li>{`Password: ${user.password}`}</li>
       <button className="delete-user" onClick={handleDelete}></button>

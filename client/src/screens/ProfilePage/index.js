@@ -1,22 +1,28 @@
 import { Redirect } from "react-router-dom";
+import TutorProfile from '../../components/tutorProfile/TutorProfile'
+import UserProfile from '../../components/UserProfile.jsx'
 
 export default function ProfilePage(props) {
-  const currentProfile = props.currentProfile;
-  const userData = props.userData;
-  const tutorData = props.tutorData;
+  const currentUser = props.currentUser;
+  const currentTutor = props.currentTutor
+  const users = props.users;
+  const tutors = props.tutors;
+  
 
   const renderProfilePage = () => {
-    if (currentProfile.tutor) {
-      return <TutorProfile tutorData={tutorData} />;
-    } else if (!currentProfile.tutor) {
-      return <UserProfile userData={userData} />;
+    if (currentTutor) {
+      const tutor = tutors.find(({username}) => username === currentTutor.username)
+      return <TutorProfile tutor={tutor} />;
+    } else if (currentUser) {
+      const user = users.find(({username}) => username === currentUser.username)
+      return <UserProfile user={user} />;
     } else {
-      <Redirect to="/" />;
+      return <Redirect to="/Landing" />;
     }
   };
   return (
     <div>
-      <Logout />
+      <button onClick={props.logout}>Sign Out</button>
       {renderProfilePage()}
     </div>
   );
