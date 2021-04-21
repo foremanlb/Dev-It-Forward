@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { signUpTutor } from "../../services/tutors";
+import { useHistory } from "react-router-dom"
 
 export default function TutorSignUp(props) {
+  
+  
+
   const defaultInput = {
     username: "",
     email: "",
@@ -9,9 +13,7 @@ export default function TutorSignUp(props) {
     programmingLanguage: [],
     description: "",
     password: "",
-    passwordConfirmation: "",
   };
-
   const [input, setInput] = useState(defaultInput);
 
   const handleChange = (e) => {
@@ -22,23 +24,45 @@ export default function TutorSignUp(props) {
     }));
   };
 
+
+  const handleLanguage = (e) => {
+    if (e.target.checked) {
+      setInput((prevState) => {
+        let languageArr =[...prevState.programmingLanguage, e.target.value];
+        return { ...prevState, programmingLanguage: languageArr };
+      });
+    } else {
+      setInput((prevState) => {
+        let index = prevState.programmingLanguage.indexOf(e.target.value);
+        let languageArr = prevState.programmingLanguage.slice();
+        languageArr.splice(index, 1);
+        return { ...prevState, programmingLanguage: languageArr };
+      });
+    }
+  }
+
+  let history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signUpTutor(input);
+    let res = await signUpTutor(input);
+    props.setCurrentTutor(res.payload);
+    history.push("/")
+
   };
 
-  // props.setCurrentUser(res.payload);
+  
 
   return (
     <div className="tutor-signUp">
       <h3>Join our Tutoring Team</h3>
-      <form onChange={handleChange}>
+      <form onSubmit={handleSubmit}>
         <label>Username</label>
         <input
+          type="type"
           name="username"
           value={input.username}
           placeholder="Please Enter Username"
-          onSubmit={handleSubmit}
+          onChange={handleChange}
           required
         />
         <label>Email:</label>
@@ -47,15 +71,16 @@ export default function TutorSignUp(props) {
           name="email"
           value={input.email}
           placeholder="Enter Email"
-          onSubmit={handleSubmit}
+          onChange={handleChange}
           required
         />
         <label>Hourly Rate (in USD):</label>
         <input
+          type="number"
           name="hourlyRate"
           value={input.hourlyRate}
           placeholder="Enter your hourly rate"
-          onSubmit={handleSubmit}
+          onChange={handleChange}
           required
         />
         <h5>Language:</h5>
@@ -64,49 +89,49 @@ export default function TutorSignUp(props) {
           type="checkbox"
           name="programmingLanguage"
           value="ruby"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>React</label>
         <input
           type="checkbox"
           name="programmingLanguage"
           value="react"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>HTML</label>
         <input
           type="checkbox"
           name="programmingLanguage"
           value="html"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>PHP</label>
         <input
           type="checkbox"
           name="programmingLanguage"
           value="php"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>Django</label>
         <input
           type="checkbox"
           name="programmingLanguage"
           value="django"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>CSS</label>
         <input
           type="checkbox"
           name="programmingLanguage"
           value="css"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>Python</label>
         <input
           type="checkbox"
           name="programmingLanguage"
           value="python"
-          onSubmit={handleSubmit}
+          onChange={handleLanguage}
         />
         <label>About Me</label>
         <textarea
@@ -117,7 +142,7 @@ export default function TutorSignUp(props) {
           name="description"
           placeholder=""
           value={input.description}
-          onSubmit={handleSubmit}
+          onChange={handleChange}
           required
         />
         <label>Password</label>
@@ -126,16 +151,7 @@ export default function TutorSignUp(props) {
           name="password"
           value={input.password}
           placeholder="Create Password"
-          onSubmit={handleSubmit}
-          required
-        />
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          name="passwordConfirmation"
-          value={input.passwordConfirmation}
-          placeholder="Re-enter Password to Confirm"
-          onSubmit={handleSubmit}
+          onChange={handleChange}
           required
         />
       </form>
