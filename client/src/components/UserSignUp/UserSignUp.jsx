@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import {signInUser, signUpUser } from "../../services/users"
 
-export default function UserSignUp(props) {
+
+export default function SignUpUser(props) {
   const defaultInput = {
     username: "",
     email: "",
