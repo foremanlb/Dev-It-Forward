@@ -1,5 +1,5 @@
 import React from 'react'
-import TutorCard from './TutorCard'
+import TutorCard from '../TutorCard/TutorCard'
 
 export default function CardContainer(props) {
   const tutors = props.tutors
