@@ -8,7 +8,7 @@ export default function tutorGallery(props) {
   const tutors = props.tutors
 
   const renderPage = () => {
-    if (currentUser !== null|| currentTutor !== null) {
+    if (currentUser || currentTutor ) {
       return (
         <div>
           <CardContainer tutors={tutors}/>

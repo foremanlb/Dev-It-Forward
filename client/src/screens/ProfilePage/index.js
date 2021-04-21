@@ -17,7 +17,7 @@ export default function ProfilePage(props) {
       const user = users.find(({username}) => username === currentUser.username)
       return <UserProfile user={user} />;
     } else {
-      <Redirect to="/" />;
+      return <Redirect to="/Landing" />;
     }
   };
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { verifyUser } from "./services/users.js";
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import { verifyTutor } from './services/tutors'
 import Navbar from './components/Navbar/Navbar.js'
 import Landing from './screens/Landing/index'
@@ -8,19 +8,22 @@ import TutorGallery from './screens/tutorGallery'
 import { getTutors } from './services/tutors'
 import { getUsers } from './services/users'
 import SignUp from './screens/SignUp'
+import ProfilePage from './screens/ProfilePage'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [currentTutor, setCurrentTutor] = useState(null)
   const [users, setUsers] = useState([])
   const [tutors, setTutors] = useState([])
+  const [toggle, setToggle] = useState(true)
+  const history = useHistory()
 
   useEffect(() => {
     fetchTutors()
     fetchUsers()
     requestUserVerification()
     requestTutorVerification()
-  }, [])
+  }, [toggle])
 
   const fetchTutors = async () => {
     const data = await getTutors()
@@ -46,6 +49,8 @@ function App() {
     await localStorage.clear()
     setCurrentTutor(null)
     setCurrentUser(null)
+    setToggle((prevState) => !prevState)
+    history.push('/')
   }
 
   return (
@@ -61,7 +66,7 @@ function App() {
         <SignUp setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor}/>
       </Route>
       <Route exact path='/profile'>
-        <SignUp CurrentUser={currentUser} CurrentTutor={currentTutor} tutors={tutors} users={users} logout={logout}/>
+        <ProfilePage currentUser={currentUser} currentTutor={currentTutor} tutors={tutors} users={users} logout={logout}/>
       </Route>
     </div>
   );
