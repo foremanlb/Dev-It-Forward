@@ -47,8 +47,6 @@ function App() {
 
   const logout = async () => {
     await localStorage.clear()
-    setCurrentTutor(null)
-    setCurrentUser(null)
     setToggle((prevState) => !prevState)
     history.push('/')
   }
