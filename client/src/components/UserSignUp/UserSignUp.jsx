@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import {signInUser, signUpUser } from "../../services/users"
 
 
@@ -9,7 +9,6 @@ export default function SignUpUser(props) {
     username: "",
     email: "",
     password: "",
-    passwordConfirmation: "",
    
   };
   //let history = useHistory()
