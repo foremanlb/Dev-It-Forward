@@ -33,6 +33,7 @@ return (
       <label>username</label>
       <input
         name="username"
+        type = "username"
         value={input.username}
         placeholder = "Enter username .."
       />
