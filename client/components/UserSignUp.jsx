@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { signInUser, signUpUser } from "../services/users"
+import {signInUser, signUpUser } from "../services/users"
 
-export default function SignUp(props) {
+export default function SignUpUser(props) {
   const defaultInput = {
     username: "",
     email: "",
@@ -24,7 +24,7 @@ export default function SignUp(props) {
     e.preventDefault();
     await signUpUser(input);
     let res = await signInUser(input);
-    //props. current user 
+    //props.setCurrentUser(res.payload)
  }
 return (
   <div>
