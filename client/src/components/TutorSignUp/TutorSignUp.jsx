@@ -1,19 +1,18 @@
-import { useState } from "react"
-import { signUpTutor  } from "../../services/tutors"
+import { useState } from "react";
+import { signUpTutor } from "../../services/tutors";
 
-
-export default function SignUpTutor (props) {
+export default function TutorSignUp(props) {
   const defaultInput = {
     username: "",
     email: "",
     hourlyRate: "",
     programmingLanguage: [],
-    description:"",
+    description: "",
     password: "",
     passwordConfirmation: "",
   };
 
-  const [input, setInput] = useState(defaultInput)
+  const [input, setInput] = useState(defaultInput);
 
   const handleChange = (e) => {
     let { name, value } = e.target;
@@ -26,14 +25,14 @@ export default function SignUpTutor (props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signUpTutor(input);
-  }
+  };
 
   // props.setCurrentUser(res.payload);
 
   return (
     <div className="tutor-signUp">
       <h3>Join our Tutoring Team</h3>
-      <form onChange={handleChange} >
+      <form onChange={handleChange}>
         <label>Username</label>
         <input
           name="username"
@@ -140,7 +139,7 @@ export default function SignUpTutor (props) {
           required
         />
       </form>
-      <input type='submit'/>
+      <input type="submit" />
     </div>
-  )
+  );
 }
