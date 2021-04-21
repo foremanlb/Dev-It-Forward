@@ -1,16 +1,17 @@
+import React from 'react'
 import { useState } from "react";
-
+//import { useHistory } from "react-router-dom";
 import {signInUser, signUpUser } from "../../services/users"
+
 
 export default function SignUpUser(props) {
   const defaultInput = {
     username: "",
     email: "",
     password: "",
-    passwordConfirmation: "",
    
   };
-
+  //let history = useHistory()
   const [input, setInput] = useState(defaultInput);
   
   const handleChange = (event) => {
@@ -22,10 +23,11 @@ export default function SignUpUser(props) {
 }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signUpUser(input);
+   await signUpUser(input);
     let res = await signInUser(input);
-    props.setCurrentUser(res.payload)
- }
+    props.setCurrentUser(res.payload);
+  }
+  
 return (
   <div>
     <h2> Header Student </h2>
@@ -59,7 +61,7 @@ return (
         value={input.passwordConfirmation}
         placeholder = "reenter password .."
       />
-      <button type = "submit"></button>
+      <input type = "submit"></input>
     </form>
   </div>
 )
