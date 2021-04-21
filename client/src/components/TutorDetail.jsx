@@ -15,7 +15,7 @@ const TutorDetail = (props) => {
       setTutor(tutor)
       }
     fetchTutor();
-  },[id])
+  })
 
 
 
@@ -27,7 +27,14 @@ const TutorDetail = (props) => {
         <div className="tutor-user-name"> {tutor.username}</div>
         <div className="tutor-email"> {tutor.email}</div>
         <div className="tutor-hourlyrate"> {tutor.hourlyRate}</div>
-        <div className="tutor-pro-langauge"> {tutor.programmingLanguage}</div>
+        <ul>{tutor.programmingLanguage.map((language) => {
+        return (
+          <li key={language}>
+            {language}
+          </li>
+        )
+      })}
+      </ul>
         <div className="tutor-description"> {tutor.description}</div>
         
       </div>
