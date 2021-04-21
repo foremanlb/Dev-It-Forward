@@ -1,8 +1,8 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import CardContainer from '../components/CardContainer'
+import CardContainer from '../../components/CardContainer/CardContainer'
 
-export default function tutorGallery(props) {
+export default function TutorGallery(props) {
   const currentUser = props.currentUser
   const currentTutor = props.currentTutor
   const tutors = props.tutors

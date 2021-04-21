@@ -1,5 +1,5 @@
-import TutorSignIn from '../../components/TutorSignIn'
-import UsersSignIn from '../../components/UsersSignIn'
+import TutorSignIn from '../../components/TutorSignIn/TutorSignIn'
+import UsersSignIn from '../../components/UsersSignIn/UsersSignIn'
 import { useHistory } from "react-router-dom";
 import hero from '../../images/hero.jpeg'
 
