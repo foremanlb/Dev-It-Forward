@@ -1,12 +1,21 @@
-export default function UserProfile(props) {
-  const userData = props.userData;
+import { deleteUser } from "../../services/users";
+import { useHistory } from "react-router-dom";
 
+export default function UserProfile(props) {
+  const user = props.user;
+  let history = useHistory();
+
+  async function handleDelete() {
+    const deletedUser = await deleteUser(user._id);
+    history.push("/");
+  }
   return (
     <div>
-      <h3>{`Nice to see you again, ${userData.username}`}</h3>
+      <h3>{`Nice to see you again, ${user.username}`}</h3>
       <p>This the the info we have on your profile</p>
-      <li>{`Email: ${userData.email}`}</li>
-      <li>{`Password: ${userData.password}`}</li>
+      <li>{`Email: ${user.email}`}</li>
+      <li>{`Password: ${user.password}`}</li>
+      <button className="delete-user" onClick={handleDelete}></button>
     </div>
   );
 }
