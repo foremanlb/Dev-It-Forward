@@ -61,7 +61,7 @@ function App() {
         <TutorGallery currentUser={currentUser} currentTutor={currentTutor} tutors={tutors} logout={logout}/>
       </Route>
       <Route exact path='/sign-up'>
-        <SignUp setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor}/>
+        <SignUp setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor} setToggle={setToggle}/>
       </Route>
       <Route exact path='/profile'>
         <ProfilePage currentUser={currentUser} currentTutor={currentTutor} tutors={tutors} users={users} logout={logout}/>

@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { signUpTutor } from "../../services/tutors";
+import { signInTutor, signUpTutor } from "../../services/tutors";
 import { useHistory } from "react-router-dom"
 
 export default function TutorSignUp(props) {
   
-  
-
   const defaultInput = {
     username: "",
     email: "",
@@ -44,13 +42,16 @@ export default function TutorSignUp(props) {
   let history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await signUpTutor(input);
+    await signUpTutor(input);
+    let res = await signInTutor({
+      username: input.username,
+      email: input.email,
+    })
     props.setCurrentTutor(res.payload);
+    props.setToggle((prevState)=>!prevState)
     history.push("/")
 
   };
-
-  
 
   return (
     <div className="tutor-signUp">
@@ -154,8 +155,9 @@ export default function TutorSignUp(props) {
           onChange={handleChange}
           required
         />
+        <input type="submit" />
       </form>
-      <input type="submit" />
+      
     </div>
   );
 }

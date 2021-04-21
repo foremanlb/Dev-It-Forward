@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import {signInUser, signUpUser } from "../services/users"
+import {signInUser, signUpUser } from "../../services/users"
 
 export default function SignUpUser(props) {
   const defaultInput = {
