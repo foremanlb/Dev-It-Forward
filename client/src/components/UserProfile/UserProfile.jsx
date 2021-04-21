@@ -1,4 +1,4 @@
-import { deleteUser } from "../services/users";
+import { deleteUser } from "../../services/users";
 import { useHistory } from "react-router-dom";
 
 export default function UserProfile(props) {

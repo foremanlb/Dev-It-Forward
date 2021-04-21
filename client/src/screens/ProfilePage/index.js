@@ -1,6 +1,6 @@
 import { Redirect } from "react-router-dom";
 import TutorProfile from '../../components/tutorProfile/TutorProfile'
-import UserProfile from '../../components/UserProfile.jsx'
+import UserProfile from '../../components/UserProfile/UserProfile'
 
 export default function ProfilePage(props) {
   const currentUser = props.currentUser;
