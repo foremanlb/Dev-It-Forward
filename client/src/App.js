@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { verifyUser } from "./services/users.js";
 import { Route, useHistory } from "react-router-dom";
 import { verifyTutor } from './services/tutors'
-import Navbar from './components/Navbar/Navbar.js'
+import Navbar from './components/Navbar/Navbar'
 import Landing from './screens/Landing/index'
-import TutorGallery from './screens/tutorGallery'
+import TutorGallery from './screens/TutorGallery'
 import { getTutors } from './services/tutors'
 import { getUsers } from './services/users'
 import SignUp from './screens/SignUp'
