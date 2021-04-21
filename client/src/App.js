@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { verifyUser } from "./services/users.js";
 import { Route } from "react-router-dom";
-// import { verifyTutor } from './services/tutors'
+import { verifyTutor } from './services/tutors'
 import Navbar from './components/Navbar/Navbar.js'
 import Landing from './screens/Landing/index'
 import TutorGallery from './screens/tutorGallery'
 import { getTutors } from './services/tutors'
-import {getUsers} from './services/users'
+import { getUsers } from './services/users'
+import SignUp from './screens/SignUp'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -18,6 +19,7 @@ function App() {
     fetchTutors()
     fetchUsers()
     requestUserVerification()
+    requestTutorVerification()
   }, [])
 
   const fetchTutors = async () => {
@@ -35,6 +37,11 @@ function App() {
     setCurrentUser(user)
   }
   
+  const requestTutorVerification = async () => {
+    const tutor = await verifyTutor()
+    setCurrentTutor(tutor)
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -43,6 +50,9 @@ function App() {
       </Route>
       <Route exact path='/'>
         <TutorGallery currentUser={currentUser} currentTutor={currentTutor} tutors={tutors}/>
+      </Route>
+      <Route path='/sign-up'>
+        <SignUp setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor}/>
       </Route>
     </div>
   );
