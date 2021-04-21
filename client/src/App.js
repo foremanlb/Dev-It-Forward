@@ -57,10 +57,10 @@ function App() {
       <Route exact path='/'>
         <TutorGallery currentUser={currentUser} currentTutor={currentTutor} tutors={tutors} logout={logout}/>
       </Route>
-      <Route path='/sign-up'>
+      <Route exact path='/sign-up'>
         <SignUp setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor}/>
       </Route>
-      <Route path='/profile'>
+      <Route exact path='/profile'>
         <SignUp CurrentUser={currentUser} CurrentTutor={currentTutor} tutors={tutors} users={users} logout={logout}/>
       </Route>
     </div>

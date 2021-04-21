@@ -1,5 +1,6 @@
 import { Redirect } from "react-router-dom";
 import TutorProfile from '../../components/tutorProfile/TutorProfile'
+import UserProfile from '../../components/UserProfile.jsx'
 
 export default function ProfilePage(props) {
   const currentUser = props.currentUser;
@@ -12,15 +13,16 @@ export default function ProfilePage(props) {
     if (currentTutor) {
       const tutor = tutors.find(({username}) => username === currentTutor.username)
       return <TutorProfile tutor={tutor} />;
-    } else if (!currentUser) {
-      return <UserProfile userData={userData} />;
+    } else if (currentUser) {
+      const user = users.find(({username}) => username === currentUser.username)
+      return <UserProfile user={user} />;
     } else {
       <Redirect to="/" />;
     }
   };
   return (
     <div>
-      <Logout />
+      <button onClick={props.logout}>Sign Out</button>
       {renderProfilePage()}
     </div>
   );
