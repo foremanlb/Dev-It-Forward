@@ -1,14 +1,14 @@
 import React from 'react'
 
 export default function TutorCard(props) {
-  const item = props.item
+  const tutor = props.tutor
 
   return (
     <div>
-      <h3>{item.username}</h3>
-      <h5>{item.email}</h5>
-      <p>{`Hourly Rate: $${item.hourlyRate}`}</p>
-      <ul>{item.programmingLanguage.map((language) => {
+      <h3>{tutor.username}</h3>
+      <h5>{tutor.email}</h5>
+      <p>{`Hourly Rate: $${tutor.hourlyRate}`}</p>
+      <ul>{tutor.programmingLanguage.map((language) => {
         return (
           <li key={language}>
             {language}
@@ -16,7 +16,7 @@ export default function TutorCard(props) {
         )
       })}
       </ul>
-      <p>{item.description}</p>
+      <p>{tutor.description}</p>
     </div>
   )
 }

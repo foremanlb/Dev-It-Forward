@@ -1,20 +1,22 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import CardContainer from '../components/CardContainer'
 
 export default function tutorGallery(props) {
-  const currentProfile = props.currentProfile
-  const data = props.data
+  const currentUser = props.currentUser
+  const currentTutor = props.currentTutor
+  const tutors = props.tutors
 
   const renderPage = () => {
-    if (currentProfile.username) {
+    if (currentUser !== null|| currentTutor !== null) {
       return (
         <div>
           <logout />
-          <cardContainer data={data}/>
+          <CardContainer tutors={tutors}/>
         </div>
       )
     } else {
-      return <Redirect to='/' />
+      return <Redirect to='/Landing' />
     }
   }
 
