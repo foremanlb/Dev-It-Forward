@@ -1,7 +1,7 @@
 import React from 'react'
 import TutorCard from './TutorCard'
 
-export default function cardContainer(props) {
+export default function CardContainer(props) {
   const tutors = props.tutors
 
   return (
