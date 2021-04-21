@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { signUpTutor  } from "./../../services/tutors"
+import { signUpTutor  } from "../../services/tutors"
 
 
 export default function SignUpTutor (props) {
@@ -29,8 +29,6 @@ export default function SignUpTutor (props) {
   }
 
   // props.setCurrentUser(res.payload);
-
-  const [input, setInput] = useState(defaultInput);
 
   return (
     <div className="tutor-signUp">
