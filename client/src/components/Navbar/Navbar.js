@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom"
 
-export default function Navbar() {
+function Navbar() {
   return (
     <div className="navbar">
       <Link><button>Profile</button></Link>
@@ -8,3 +8,5 @@ export default function Navbar() {
     </div>
   )
 }
+
+export default Navbar

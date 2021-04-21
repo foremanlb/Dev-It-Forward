@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { verifyUser } from "./services/user.js.js";
+import { verifyUser } from "./services/users.js";
 import { Route } from "react-router-dom";
 import { verifyTutor } from './services/tutors'
-import { Navbar } from './components/Navbar/Navbar.jsx'
+import Navbar from './components/Navbar/Navbar.js'
+import Landing from './screens/Landing/index'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -27,14 +28,8 @@ function App() {
     <div className="App">
       <Navbar />
         <Route exact path="/">
-          
-        </Route>
-        <Route path="/sign-up">
-          
-        </Route>
-        <Route path="/sign-in">
-          
-      </Route>      
+          <Landing />
+        </Route>      
     </div>
   );
 }

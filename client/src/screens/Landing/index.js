@@ -20,7 +20,7 @@ export default function Landing() {
     <div>
       <h1 className="hero-image-header-text">Level up with a coding tutor</h1>
       <div className="hero-image-container">
-        <img className="hero-image" src="../../assets/hero.jpeg" alt="laptop" />
+        <img className="hero-image" src={require("../../assets/hero.jpeg")} alt="laptop"/>
       </div>
       <p className="hero-image-paragraph-text">
         1-on-1 coaching from someone that has gone through the same bootcamp you
