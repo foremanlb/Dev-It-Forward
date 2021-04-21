@@ -11,7 +11,7 @@ export const getTutors = async () => {
 
 export const getTutor = async (id) => {
   try {
-    const response = await api.get(`/tutors/${id}`)
+    const response = await api.get(`/tutors/tutor/${id}`)
     return response.data;
   } catch (error) {
     throw error;
