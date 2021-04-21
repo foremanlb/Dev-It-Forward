@@ -2,13 +2,13 @@ import React from 'react'
 import TutorCard from './TutorCard'
 
 export default function cardContainer(props) {
-  const data = props.data
+  const tutors = props.tutors
 
   return (
     <div>
-      {data.map((item) => {
+      {tutors.map((tutor) => {
         return(
-          <TutorCard item={item} key={item._id}/>
+          <TutorCard tutor={tutor} key={tutor._id}/>
       )})}
     </div>
   )

@@ -1,25 +1,28 @@
 import React from 'react'
 import { signInTutor } from '../services/tutors.js'
 import { useHistory } from "react-router-dom";
-
+import { useState } from "react";
 
 
 export default function TutorSignIn(props) {
-  const setInput = props.setInput
-  const input = props.input
+  let defaultInput = {
+    username: "",
+    password: "",
+  };
+  const [tutorInput, setTutorInput] = useState(defaultInput);
 
   const history = useHistory();
 
 
   const handleSubmit = async (event) => {
   event.preventDefault();
-  await signInTutor(input);
+  await signInTutor(tutorInput);
   history.push("/tutors");
   };
 
   function handleChange(event) {
   let { id, value } = event.target;
-  setInput((prevInput) => ({
+  setTutorInput((prevInput) => ({
     ...prevInput,
     [id]: value,
     }));
@@ -35,14 +38,14 @@ export default function TutorSignIn(props) {
           type="text"
           id="username"
           onChange={handleChange}
-          value={input.username}
+          value={tutorInput.username}
         ></input>
         <label htmlFor="password" placeholder="password"></label>
         <input
           type="text"
           id="password"
           onChange={handleChange}
-          value={input.password}
+          value={tutorInput.password}
         ></input>
         <button type="submit">Sign-In</button>
       </form>

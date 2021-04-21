@@ -10,7 +10,7 @@ export const getUsers = async () => {
 }
 export const getUser = async (id) => {
   try {
-    let res = await api.get(`/users/${id}`)
+    let res = await api.get(`/users/user/${id}`)
     return res.data
   } catch (error) {
     throw error
