@@ -11,7 +11,6 @@ export default function tutorGallery(props) {
     if (currentUser !== null|| currentTutor !== null) {
       return (
         <div>
-          <logout />
           <CardContainer tutors={tutors}/>
         </div>
       )
@@ -22,6 +21,7 @@ export default function tutorGallery(props) {
 
   return (
     <div>
+      <button onClick={props.logout}>Sign Out</button>
       {renderPage()}
     </div>
   )

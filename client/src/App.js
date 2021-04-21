@@ -42,6 +42,12 @@ function App() {
     setCurrentTutor(tutor)
   }
 
+  const logout = async () => {
+    await localStorage.clear()
+    setCurrentTutor(null)
+    setCurrentUser(null)
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -49,10 +55,13 @@ function App() {
         <Landing  setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor}/>
       </Route>
       <Route exact path='/'>
-        <TutorGallery currentUser={currentUser} currentTutor={currentTutor} tutors={tutors}/>
+        <TutorGallery currentUser={currentUser} currentTutor={currentTutor} tutors={tutors} logout={logout}/>
       </Route>
       <Route path='/sign-up'>
         <SignUp setCurrentUser={setCurrentUser} setCurrentTutor={setCurrentTutor}/>
+      </Route>
+      <Route path='/profile'>
+        <SignUp CurrentUser={currentUser} CurrentTutor={currentTutor} tutors={tutors} users={users} logout={logout}/>
       </Route>
     </div>
   );
