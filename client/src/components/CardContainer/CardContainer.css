@@ -1,0 +1,6 @@
+.tutor-gallery-container {
+  background: #3c6e71; /* fallback for old browsers */
+
+  display: flex;
+  flex-direction: column;
+}
