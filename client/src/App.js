@@ -84,6 +84,8 @@ function App() {
           users={users}
           logout={logout}
           setToggle={setToggle}
+          setCurrentUser={setCurrentUser}
+          setCurrentTutor={setCurrentTutor}
         />
       </Route>
       <Route exact path="/details/:id">
