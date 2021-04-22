@@ -9,7 +9,6 @@ export default function ProfilePage(props) {
   const users = props.users;
   const tutors = props.tutors;
   const setToggle = props.setToggle;
-  const setCurrentTutor = props.setCurrentTutor;
 
   const renderProfilePage = () => {
     if (currentTutor) {
@@ -20,14 +19,20 @@ export default function ProfilePage(props) {
         <TutorProfile
           tutor={tutor}
           setToggle={setToggle}
-          setCurrentTutor={setCurrentTutor}
+          setCurrentTutor={props.setCurrentTutor}
         />
       );
     } else if (currentUser) {
       const user = users.find(
         ({ username }) => username === currentUser.username
       );
-      return <UserProfile user={user} />;
+      return (
+        <UserProfile
+          user={user}
+          setToggle={setToggle}
+          setCurrentUser={props.setCurrentUser}
+        />
+      );
     } else {
       return <Redirect to="/Landing" />;
     }

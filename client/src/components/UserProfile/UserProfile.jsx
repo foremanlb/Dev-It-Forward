@@ -1,12 +1,14 @@
-import { deleteUser, updatedUser } from "../../services/users";
+import { deleteUser, updatedUser, signInUser } from "../../services/users";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import "./UserProfile.css";
+
 export default function UserProfile(props) {
   const user = props.user;
   const [input, setInput] = useState(user);
   let history = useHistory();
   const setToggle = props.setToggle;
+  const setCurrentUser = props.setCurrentUser;
 
   async function handleDelete() {
     await deleteUser(user._id);
@@ -26,12 +28,17 @@ export default function UserProfile(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await updatedUser(user._id, input);
+    props.setCurrentUser({
+      username: input.username,
+      email: input.email,
+    });
     setToggle((prevState) => !prevState);
+    alert("User Profile Updated!");
   };
 
   return (
     <div className="profile-container">
-      <h3>{`Nice to see you again, ${user.username}`}</h3>
+      <h3>{`Nice to see you again!`}</h3>
       <p>This is the info we have on your profile</p>
       <form className="form-container" onSubmit={handleSubmit}>
         <label htmlFor="username">User Name</label>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { signInTutor, signUpTutor } from "../../services/tutors";
-import { useHistory } from "react-router-dom"
-import './TutorSignUp.css'
+import { useHistory } from "react-router-dom";
+import "./TutorSignUp.css";
 
 export default function TutorSignUp(props) {
   const defaultInput = {
@@ -22,7 +22,6 @@ export default function TutorSignUp(props) {
     }));
   };
 
-
   const handleLanguage = (e) => {
     if (e.target.checked) {
       setTutorInput((prevState) => {
@@ -37,7 +36,7 @@ export default function TutorSignUp(props) {
         return { ...prevState, programmingLanguage: languageArr };
       });
     }
-  }
+  };
 
   let history = useHistory();
 
@@ -47,17 +46,16 @@ export default function TutorSignUp(props) {
     let res = await signInTutor({
       username: tutorInput.username,
       password: tutorInput.password,
-    })
+    });
     props.setCurrentTutor(res.payload);
-    // props.setToggle((prevState) => !prevState)
-    history.push("/")
-
+    props.setToggle((prevState) => !prevState);
+    history.push("/");
   };
 
   return (
     <div className="tutor-signUp">
-      <h2 id='tutor-sign-up-title'>Tutor Sign Up</h2>
-      <form onSubmit={handleTutorSubmit} id='TutorSignUpForm'>
+      <h2 id="tutor-sign-up-title">Tutor Sign Up</h2>
+      <form onSubmit={handleTutorSubmit} id="TutorSignUpForm">
         <label>Username</label>
         <input
           type="type"
@@ -84,59 +82,59 @@ export default function TutorSignUp(props) {
           placeholder="Enter your hourly rate"
           onChange={handleChange}
           required
-          />
+        />
         <h5>Language:</h5>
-        <div id='languageList'>
-        <label>Ruby</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="Ruby"
-          onChange={handleLanguage}
-        />
-        <label>React</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="React"
-          onChange={handleLanguage}
-        />
-        <label>HTML</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="HTML"
-          onChange={handleLanguage}
-        />
-        <label>PHP</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="PHP"
-          onChange={handleLanguage}
-        />
-        <label>Django</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="Django"
-          onChange={handleLanguage}
-        />
-        <label>CSS</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="CSS"
-          onChange={handleLanguage}
-        />
-        <label>Python</label>
-        <input
-          type="checkbox"
-          name="programmingLanguage"
-          value="Python"
-          onChange={handleLanguage}
-        />
-        </div>  
+        <div id="languageList">
+          <label>Ruby</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="Ruby"
+            onChange={handleLanguage}
+          />
+          <label>React</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="React"
+            onChange={handleLanguage}
+          />
+          <label>HTML</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="HTML"
+            onChange={handleLanguage}
+          />
+          <label>PHP</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="PHP"
+            onChange={handleLanguage}
+          />
+          <label>Django</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="Django"
+            onChange={handleLanguage}
+          />
+          <label>CSS</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="CSS"
+            onChange={handleLanguage}
+          />
+          <label>Python</label>
+          <input
+            type="checkbox"
+            name="programmingLanguage"
+            value="Python"
+            onChange={handleLanguage}
+          />
+        </div>
         <label>About Me</label>
         <textarea
           className="description-form"
@@ -160,7 +158,6 @@ export default function TutorSignUp(props) {
         />
         <input type="submit" />
       </form>
-      
     </div>
-  )
+  );
 }

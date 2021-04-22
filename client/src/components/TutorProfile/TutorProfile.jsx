@@ -30,6 +30,11 @@ export default function TutorProfile(props) {
     e.preventDefault();
     await updateTutor(tutor._id, input);
     setToggle((prevState) => !prevState);
+    props.setCurrentTutor({
+      username: input.username,
+      email: input.email,
+    });
+    alert("Tutor Profile Updated!");
   };
 
   return (
