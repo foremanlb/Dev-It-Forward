@@ -18,7 +18,6 @@ function App() {
   const [tutors, setTutors] = useState([]);
   const [toggle, setToggle] = useState(true);
   const history = useHistory();
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetchTutors();
