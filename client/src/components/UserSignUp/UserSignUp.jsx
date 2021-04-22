@@ -9,7 +9,7 @@ export default function SignUpUser(props) {
     username: "",
     email: "",
     password: "",
-   
+  
   };
   //let history = useHistory()
   const [input, setInput] = useState(defaultInput);
@@ -23,7 +23,7 @@ export default function SignUpUser(props) {
 }
   const handleSubmit = async (e) => {
     e.preventDefault();
-   await signUpUser(input);
+    await signUpUser(input);
     let res = await signInUser(input);
     props.setCurrentUser(res.payload);
   }
@@ -31,20 +31,22 @@ export default function SignUpUser(props) {
 return (
   <div>
     <h2> Header Student </h2>
-    <form onChange = {handleChange} onSubmit={handleSubmit} >
+    <form  onSubmit={handleSubmit} >
       <label>username</label>
       <input
         name="username"
         type = "text"
         value={input.username}
-        placeholder = "Enter username .."
+        placeholder="Enter username .."
+        onChange = {handleChange}
       />
       <label>Email</label>
       <input
         name="email"
         type = "email"
         value={input.email}
-        placeholder = "Enter email .."
+        placeholder="Enter email .."
+        onChange = {handleChange}
       />
 
       <label>Password</label>
@@ -52,14 +54,8 @@ return (
         name="password"
         type ="password"
         value={input.password}
-        placeholder = "Enter password .."
-      />
-      <label>Password Confirmation</label>
-      <input
-        name="passwordConfirmation"
-        type ="password"
-        value={input.passwordConfirmation}
-        placeholder = "reenter password .."
+        placeholder="Enter password .."
+        onChange = {handleChange}
       />
       <input type = "submit"></input>
     </form>

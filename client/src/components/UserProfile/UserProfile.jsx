@@ -6,7 +6,7 @@ export default function UserProfile(props) {
   let history = useHistory();
 
   async function handleDelete() {
-    const deletedUser = await deleteUser(user._id);
+    await deleteUser(user._id);
     history.push("/");
   }
   return (

@@ -15,9 +15,10 @@ export default function TutorSignIn(props) {
 
 
   const handleSubmit = async (event) => {
-  event.preventDefault();
-  await signInTutor(tutorInput);
-  history.push("/tutors");
+    event.preventDefault();
+    let res = await signInTutor(tutorInput);
+    props.setCurrentTutor(res.payload)
+    history.push("/");
   };
 
   function handleChange(event) {
