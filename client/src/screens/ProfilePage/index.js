@@ -1,22 +1,32 @@
 import { Redirect } from "react-router-dom";
-import TutorProfile from '../../components/TutorProfile/TutorProfile'
-import UserProfile from '../../components/UserProfile/UserProfile'
+import TutorProfile from "../../components/TutorProfile/TutorProfile";
+import UserProfile from "../../components/UserProfile/UserProfile";
+import "./index.css";
 
 export default function ProfilePage(props) {
   const currentUser = props.currentUser;
-  const currentTutor = props.currentTutor
+  const currentTutor = props.currentTutor;
   const users = props.users;
   const tutors = props.tutors;
-  const setToggle = props.setToggle
-  const setCurrentTutor = props.setCurrentTutor
-  
+  const setToggle = props.setToggle;
+  const setCurrentTutor = props.setCurrentTutor;
 
   const renderProfilePage = () => {
     if (currentTutor) {
-      const tutor = tutors.find(({username}) => username === currentTutor.username)
-      return <TutorProfile tutor={tutor} setToggle={setToggle} setCurrentTutor={setCurrentTutor}/>;
+      const tutor = tutors.find(
+        ({ username }) => username === currentTutor.username
+      );
+      return (
+        <TutorProfile
+          tutor={tutor}
+          setToggle={setToggle}
+          setCurrentTutor={setCurrentTutor}
+        />
+      );
     } else if (currentUser) {
-      const user = users.find(({username}) => username === currentUser.username)
+      const user = users.find(
+        ({ username }) => username === currentUser.username
+      );
       return <UserProfile user={user} />;
     } else {
       return <Redirect to="/Landing" />;
@@ -24,7 +34,9 @@ export default function ProfilePage(props) {
   };
   return (
     <div>
-      <button onClick={props.logout}>Sign Out</button>
+      <button className="sign-out-button" onClick={props.logout}>
+        Sign Out
+      </button>
       {renderProfilePage()}
     </div>
   );
