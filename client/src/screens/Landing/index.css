@@ -1,5 +1,5 @@
 .landing-container {
-  height: 95vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,9 +12,9 @@ h1 {
 }
 
 .hero-image {
-  width: 400px;
+  width: auto;
   border-radius: 200px;
-  height: auto;
+  height: 50vh;
   border: 6px solid rgb(248, 248, 248);
   box-shadow: 10px 10px 5px rgb(46, 45, 45);
 }
@@ -22,4 +22,15 @@ h1 {
 .hero-image-paragraph-text {
   color: white;
   text-align: center;
+}
+
+.submit-button {
+  align-self: start;
+  color: #ffffff;
+  background-color: #353535;
+  margin: 5px;
+  padding: 2px;
+  border-radius: 4px;
+  position: absolute;
+  right: 4px;
 }

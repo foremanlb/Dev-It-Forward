@@ -49,7 +49,7 @@ export default function UsersSignIn(props) {
           onChange={handleChange}
           value={userInput.password}
         ></input>
-        <button type="submit">Sign-In</button>
+        <button className="user-sign-in-button" type="submit">Sign-In</button>
       </form>
     </div>
   )

@@ -13,6 +13,7 @@ export default function Landing(props) {
 
   return (
     <div className="landing-container">
+      <button className = "submit-button" onClick={handleClick}>Sign-Up</button>
       <h1 className="hero-image-header-text">Level up with a coding tutor</h1>
       <div className="hero-image-container">
         <img className="hero-image" src={hero} alt="laptop"/>
@@ -23,7 +24,7 @@ export default function Landing(props) {
       </p>
       <TutorSignIn setCurrentTutor={props.setCurrentTutor}/>
       <UsersSignIn setCurrentUser={props.setCurrentUser }/>
-      <button className = "submit-button" onClick={handleClick}>Sign-Up</button>
+      
     </div>
   );
 }
