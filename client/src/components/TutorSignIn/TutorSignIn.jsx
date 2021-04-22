@@ -2,6 +2,7 @@ import React from 'react'
 import { signInTutor } from '../../services/tutors.js'
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import "./TutorSignIn.css"
 
 
 export default function TutorSignIn(props) {
@@ -31,17 +32,17 @@ export default function TutorSignIn(props) {
 
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className = "tutor-sign-in">
+      <form className = "tutor-signin-form" onSubmit={handleSubmit}>
         <h1>Tutor Sign-In</h1>
-        <label htmlFor="username" placeholder="username"></label>
+        <label htmlFor="username" placeholder="username">Username</label>
         <input
           type="text"
           id="username"
           onChange={handleChange}
           value={tutorInput.username}
         ></input>
-        <label htmlFor="password" placeholder="password"></label>
+        <label htmlFor="password" placeholder="password">Password</label>
         <input
           type="password"
           id="password"
