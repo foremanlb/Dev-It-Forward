@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { signInTutor, signUpTutor } from "../../services/tutors";
 import { useHistory } from "react-router-dom"
+import './TutorSignUp.css'
 
 export default function TutorSignUp(props) {
   const defaultInput = {
@@ -55,8 +56,8 @@ export default function TutorSignUp(props) {
 
   return (
     <div className="tutor-signUp">
-      <h3>Join our Tutoring Team</h3>
-      <form onSubmit={handleTutorSubmit}>
+      <h2 id='tutor-sign-up-title'>Tutor Sign Up</h2>
+      <form onSubmit={handleTutorSubmit} id='TutorSignUpForm'>
         <label>Username</label>
         <input
           type="type"
@@ -83,8 +84,9 @@ export default function TutorSignUp(props) {
           placeholder="Enter your hourly rate"
           onChange={handleChange}
           required
-        />
+          />
         <h5>Language:</h5>
+        <div id='languageList'>
         <label>Ruby</label>
         <input
           type="checkbox"
@@ -134,11 +136,12 @@ export default function TutorSignUp(props) {
           value="Python"
           onChange={handleLanguage}
         />
+        </div>  
         <label>About Me</label>
         <textarea
           className="description-form"
-          rows="25"
-          cols="100"
+          rows="15"
+          cols="30"
           type="text"
           name="description"
           placeholder=""

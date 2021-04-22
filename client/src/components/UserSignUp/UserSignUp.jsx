@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import {signInUser, signUpUser } from "../../services/users"
+import { signInUser, signUpUser } from "../../services/users"
+import './UserSignUp.css'
 
 
 export default function SignUpUser(props) {
@@ -34,9 +35,9 @@ export default function SignUpUser(props) {
   }
   
 return (
-  <div>
-    <h2> Header Student </h2>
-    <form  onSubmit={handleUserSubmit} >
+  <div id='userSignUp'>
+    <h2 id='user-sign-up-title'> User Sign Up </h2>
+    <form  onSubmit={handleUserSubmit} id='userSignUpForm'>
       <label>username</label>
       <input
         name="username"
