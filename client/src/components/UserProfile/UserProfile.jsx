@@ -53,7 +53,7 @@ export default function UserProfile(props) {
         />
         <button type='submit'>Update Profile</button>
         </form>
-      <button className="delete-user" onClick={handleDelete}></button>
+      <button className="delete-user" onClick={handleDelete}>Delete Profile</button>
     </div>
   );
 }
