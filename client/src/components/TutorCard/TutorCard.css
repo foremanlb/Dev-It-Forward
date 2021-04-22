@@ -10,11 +10,24 @@
   align-items: center;
 }
 
-Link {
+/* Link {
   color: #a989c0;
   text-decoration: none;
-}
+} */
 
+a:link {
+  color: #3c6e71;
+  text-decoration: none;
+}
+a:visited {
+  color: #3c6e71;
+  text-decoration: none;
+}
 a:hover {
-  color: #7f3ab1;
+  color: #3c6e71;
+  text-decoration: none;
+}
+a:active {
+  color: #3c6e71;
+  text-decoration: none;
 }
