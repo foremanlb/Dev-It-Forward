@@ -39,6 +39,7 @@ export default function TutorSignUp(props) {
   }
 
   let history = useHistory();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signUpTutor(input);
