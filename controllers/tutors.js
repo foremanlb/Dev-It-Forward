@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = "srCbL:+]7*M.PT^E";
+const TUTOR_TOKEN_KEY = "rCbL:+]7*M.PT^E";
 
 //GetTutors
 const getTutors = async (req, res) => {
@@ -67,7 +67,7 @@ const deleteTutor = async (req, res) => {
 const verify = (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
-    const payload = jwt.verify(token, TOKEN_KEY);
+    const payload = jwt.verify(token, TUTOR_TOKEN_KEY);
     if (payload) {
       return res.json(payload);
     }
@@ -87,7 +87,7 @@ const signUp = async (req, res) => {
       username: tutor.username,
       email: tutor.email
     }
-    const token = jwt.sign(payload, TOKEN_KEY)
+    const token = jwt.sign(payload, TUTOR_TOKEN_KEY)
     return res.status(201).json({ token })
   } catch (error) {
     return res.status(400).json({ error: error.message })
@@ -105,7 +105,7 @@ const signIn = async (req, res) => {
           username: tutor.username,
           email: tutor.email,
         };
-        const token = jwt.sign(payload, TOKEN_KEY);
+        const token = jwt.sign(payload, TUTOR_TOKEN_KEY);
         return res.status(200).json({ payload, token });
       }else {
         return res.status(401).send("Invalid Credentials. Try again.");
@@ -136,7 +136,7 @@ const changePassword = async (req, res) => {
         username: tutor.username,
         email: tutor.email,
       };
-      const token = jwt.sign(payload, TOKEN_KEY);
+      const token = jwt.sign(payload, TUTOR_TOKEN_KEY);
       return res.status(201).json({ tutor, token });
     }
     else {

@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = "srCbL:+]7*M.PT^E";
+const USER_TOKEN_KEY = "srCbL:+]7*M.PT^E";
 
 //GetUsers
 const getUsers = async (req, res) => {
@@ -74,7 +74,7 @@ const changePassword = async (req, res) => {
         username: user.username,
         email: user.email,
       };
-      const token = jwt.sign(payload, TOKEN_KEY);
+      const token = jwt.sign(payload, USER_TOKEN_KEY);
       return res.status(201).json({ user, token });
     } else {
       return res.status(403).send("Password Change Error");
@@ -95,7 +95,7 @@ const signUp = async (req, res) => {
       username: user.username,
       email: user.email,
     };
-    const token = jwt.sign(payload, TOKEN_KEY);
+    const token = jwt.sign(payload, USER_TOKEN_KEY);
     return res.status(201).json({ token });
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -106,7 +106,7 @@ const signUp = async (req, res) => {
 const verify = (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
-    const payload = jwt.verify(token, TOKEN_KEY);
+    const payload = jwt.verify(token, USER_TOKEN_KEY);
     if (payload) {
       return res.json(payload);
     }
@@ -126,7 +126,7 @@ const signIn = async (req, res) => {
           username: user.username,
           email: user.email,
         };
-        const token = jwt.sign(payload, TOKEN_KEY);
+        const token = jwt.sign(payload, USER_TOKEN_KEY);
         return res.status(200).json({ payload, token });
       } else {
         return res.status(401).send("Invalid Credentials")

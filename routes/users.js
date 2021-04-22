@@ -10,7 +10,7 @@ const {
   signIn,
 } = require("../controllers/users.js");
 
-const restrict = require("../helpers/restrict.js");
+const restrict = require("../helpers/restrictUser.js");
 
 const router = Router();
 
