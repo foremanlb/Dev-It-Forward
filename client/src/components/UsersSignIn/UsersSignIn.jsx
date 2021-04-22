@@ -2,6 +2,7 @@ import React from 'react'
 import { signInUser } from '../../services/users.js'
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import "./UsersSignIn.css"
 
 
 export default function UsersSignIn(props) {
@@ -31,17 +32,17 @@ export default function UsersSignIn(props) {
 
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="users-sign-in">
+      <form className = "user-signin-form" onSubmit={handleSubmit}>
         <h1>User Sign-In</h1>
-        <label htmlFor="username" placeholder="username"></label>
+        <label htmlFor="username" placeholder="username">Username</label>
         <input
           type="text"
           id="username"
           onChange={handleChange}
           value={userInput.username}
         ></input>
-        <label htmlFor="password" placeholder="password"></label>
+        <label htmlFor="password" placeholder="password">Password</label>
         <input
           type="password"
           id="password"
