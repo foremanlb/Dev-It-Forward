@@ -34,7 +34,7 @@ export default function TutorProfile(props) {
 
   return (
     <div className="profile-container">
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <label htmlFor="username">User Name</label>
         <input
           type="text"
@@ -69,7 +69,9 @@ export default function TutorProfile(props) {
           onChange={handleChange}
           value={input.description}
         />
-        <button type="submit">Update Profile</button>
+        <button className="update-tutor" type="submit">
+          Update Profile
+        </button>
       </form>
       <button className="delete-tutor" onClick={handleDelete}>
         Delete Profile
