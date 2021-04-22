@@ -18,9 +18,7 @@ const TutorDetail = (props) => {
 
   return (
     <div className="tutor-detail">
-      
       <div className="detail">
-     
       <div className="tutor-user-name"> Tutor:  {tutor.username}</div>
         <div className="tutor-email"> Email: {tutor.email}</div>
         <div className="tutor-hourlyrate"> Hourly Rate: {tutor.hourlyRate}</div>
