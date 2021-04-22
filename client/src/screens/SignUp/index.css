@@ -1,13 +1,8 @@
 #signUp {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: #3c6e71;
-}
-
-@media (max-width: 767px) {
-  #signUp {
-    grid-template-columns: 1fr;
-    height: 100%;
-  }
+  padding-bottom: 30px;
+  align-items: center;
 }

@@ -1,7 +1,7 @@
 import { deleteUser, updatedUser } from "../../services/users";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-
+import "./UserProfile.css";
 export default function UserProfile(props) {
   const user = props.user;
   const [input, setInput] = useState(user);
@@ -30,10 +30,10 @@ export default function UserProfile(props) {
   };
 
   return (
-    <div>
+    <div className="profile-container">
       <h3>{`Nice to see you again, ${user.username}`}</h3>
       <p>This is the info we have on your profile</p>
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <label htmlFor="username">User Name</label>
         <input
           type="text"
@@ -51,7 +51,9 @@ export default function UserProfile(props) {
           onChange={handleChange}
           value={input.email}
         />
-        <button type="submit">Update Profile</button>
+        <button className="update-user" type="submit">
+          Update Profile
+        </button>
       </form>
       <button className="delete-user" onClick={handleDelete}>
         Delete Profile
