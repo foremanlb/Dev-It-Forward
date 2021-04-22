@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import "./TutorCard.css";
 
 export default function TutorCard(props) {
   const tutor = props.tutor;
 
   return (
-    <div>
-      <h3>{tutor.username}</h3>
+    <div className="tutor-card-container">
+      <h3>Tutor: {tutor.username}</h3>
       <p>{`Hourly Rate: $${tutor.hourlyRate}`}</p>
       <ul>
         {tutor.programmingLanguage.map((language) => {
