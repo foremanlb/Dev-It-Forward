@@ -43,7 +43,7 @@ export default function TutorSignIn(props) {
         ></input>
         <label htmlFor="password" placeholder="password"></label>
         <input
-          type="text"
+          type="password"
           id="password"
           onChange={handleChange}
           value={tutorInput.password}
