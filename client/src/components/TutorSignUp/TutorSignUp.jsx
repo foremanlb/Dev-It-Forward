@@ -11,11 +11,11 @@ export default function TutorSignUp(props) {
     description: "",
     password: "",
   };
-  const [input, setInput] = useState(defaultInput);
+  const [tutorInput, setTutorInput] = useState(defaultInput);
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    setInput((prevInput) => ({
+    setTutorInput((prevInput) => ({
       ...prevInput,
       [name]: value,
     }));
@@ -24,12 +24,12 @@ export default function TutorSignUp(props) {
 
   const handleLanguage = (e) => {
     if (e.target.checked) {
-      setInput((prevState) => {
+      setTutorInput((prevState) => {
         let languageArr = [...prevState.programmingLanguage, e.target.value];
         return { ...prevState, programmingLanguage: languageArr };
       });
     } else {
-      setInput((prevState) => {
+      setTutorInput((prevState) => {
         let index = prevState.programmingLanguage.indexOf(e.target.value);
         let languageArr = prevState.programmingLanguage.slice();
         languageArr.splice(index, 1);
@@ -39,15 +39,16 @@ export default function TutorSignUp(props) {
   }
 
   let history = useHistory();
-  const handleSubmit = async (e) => {
+
+  const handleTutorSubmit = async (e) => {
     e.preventDefault();
-    await signUpTutor(input);
+    await signUpTutor(tutorInput);
     let res = await signInTutor({
-      username: input.username,
-      password: input.password,
+      username: tutorInput.username,
+      password: tutorInput.password,
     })
     props.setCurrentTutor(res.payload);
-    props.setToggle((prevState) => !prevState)
+    // props.setToggle((prevState) => !prevState)
     history.push("/")
 
   };
@@ -55,12 +56,12 @@ export default function TutorSignUp(props) {
   return (
     <div className="tutor-signUp">
       <h3>Join our Tutoring Team</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleTutorSubmit}>
         <label>Username</label>
         <input
           type="type"
           name="username"
-          value={input.username}
+          value={tutorInput.username}
           placeholder="Please Enter Username"
           onChange={handleChange}
           required
@@ -69,7 +70,7 @@ export default function TutorSignUp(props) {
         <input
           type="email"
           name="email"
-          value={input.email}
+          value={tutorInput.email}
           placeholder="Enter Email"
           onChange={handleChange}
           required
@@ -78,7 +79,7 @@ export default function TutorSignUp(props) {
         <input
           type="number"
           name="hourlyRate"
-          value={input.hourlyRate}
+          value={tutorInput.hourlyRate}
           placeholder="Enter your hourly rate"
           onChange={handleChange}
           required
@@ -141,7 +142,7 @@ export default function TutorSignUp(props) {
           type="text"
           name="description"
           placeholder=""
-          value={input.description}
+          value={tutorInput.description}
           onChange={handleChange}
           required
         />
@@ -149,7 +150,7 @@ export default function TutorSignUp(props) {
         <input
           type="password"
           name="password"
-          value={input.password}
+          value={tutorInput.password}
           placeholder="Create Password"
           onChange={handleChange}
           required
