@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './TutorDetail.css'
 import { getTutor } from "../../services/tutors";
 import { useParams } from "react-router-dom";
 
@@ -18,7 +19,7 @@ const TutorDetail = (props) => {
   return (
     <div className="tutor-detail">
       <div className="detail">
-        <div className="tutor-user-name"> {tutor.username}</div>
+      <div className="tutor-user-name"> UserName: {tutor.username}</div>
         <div className="tutor-email"> {tutor.email}</div>
         <div className="tutor-hourlyrate"> {tutor.hourlyRate}</div>
         <ul>
