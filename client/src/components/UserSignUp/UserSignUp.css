@@ -1,0 +1,30 @@
+#userSignUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  justify-content: space-evenly;
+}
+
+#userSignUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 35vh 30vh 30vh 30vh;
+  border-radius: 5%;
+}
+
+#user-sign-up-title {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  #userSignUp {
+    width: 100vw;
+  }
+
+  #userSignUpForm {
+    padding: 25px;
+  }
+}
