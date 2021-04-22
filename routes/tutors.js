@@ -9,7 +9,7 @@ const {
   changePassword,
   verify,
 } = require("../controllers/tutors.js");
-const restrict = require("../helpers/restrict.js");
+const restrict = require("../helpers/restrictTutor.js");
 
 const router = Router();
 router.put("/password-change/:id", changePassword);
