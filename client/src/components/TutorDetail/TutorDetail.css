@@ -12,12 +12,21 @@
 .tutor-user-name{
  font-size: 30px;
 }
-.tutor-email{
+
+.tutor-email,.tutor-hourlyrate{
   font-size: 20px;
 }
 .tutor-detail{
-  font-size: 20px;
+ 
+  padding-left: 100px;
 }
-.tutor-hourlyrate{
-  font-size: 20px;
+
+.tutor-description {
+
+  padding-bottom: 50px;
+}
+.tutor-user-image img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
 }
