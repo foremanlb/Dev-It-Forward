@@ -50,22 +50,85 @@ Creating an app for subject matter experts to connect to potential students for 
 | Day      | Deliverable                          | Status     |
 | -------- | ------------------------------------ | ---------- |
 | Apr 4/15 | Pre-Pitch/Concept                    | Complete   |
-| Apr 4/16 | Project Proposal/Back-End Setup      | Incomplete |
-| Apr 4/17 | Finish Back-End Start Front End      | Incomplete |
-| Apr 4/18 | Front End Development                | Incomplete |
-| Apr 4/19 | Front End Development                | Incomplete |
-| Apr 4/20 | Finish Front End Development/Testing | Incomplete |
-| Apr 4/21 | CSS Styling /Testing                 | Incomplete |
+| Apr 4/16 | Project Proposal/Back-End Setup      | Complete   |
+| Apr 4/17 | Back-End Development Day 2           | Complete   |
+| Apr 4/18 | Front End Development                | Complete   |
+| Apr 4/19 | Front End Development  Day 2         | Complete   |
+| Apr 4/20 | Front End Development  Day 3         | Complete   |
+| Apr 4/21 | Finish Front End Development/Testing | Incomplete |
 | Apr 4/22 | CSS Styling /Testing/No New Features | Incomplete |
 | Apr 4/23 | Presentations                        | Incomplete |
 
 ## Timeframe and Priority Matrix
 
-| Component        | Priority | Estimated Time | Time Invested |
+Craig
+| Component        | Priority | Estimated (hrs)| Time Invested |
 | ---------------- | :------: | :------------: | :-----------: |
-| Proposal/Concept |    H     |      4hrs      |       7       |
+| Proposal/Concept |    H     |      4hrs      |      7hrs     |
+| GitHub Debugs    |    H     |      2hrs      |      5hrs     |
+| Setup db folder  |    H     |      .25       |      .25hr    |
+| Routes/index.js  |    M     |      0.25      |      0.25     |
+| Controllers      |    H     |      0.25      |      0.25     |
+| Routes           |    H     |      0.25      |     0.5       |
+| Back-End Deploy  |    H     |      4hrs      |       7       |
+| Front-End Setup  |    H     |                | Time Invested |
+| Card Container   |    H     |                |               |
+| Tutor Card       |    H     |                |               |
+| Tutor Gallery    |    H     |                |               |
+| App JS Edits     |    H     |                |               |
+|                  |          |                |               |
+
 
 | Totals | L | 0 | 0 |
+
+Will
+| Component        | Priority | Estimated (hrs)| Time Invested |
+| ---------------- | :------: | :------------: | :-----------: |
+| Proposal/Concept |    H     |      4hrs      |       7       |
+| GitHub Debugs    |    H     |      2hrs      |       5       |
+| Seed Data        |    M     |      0.5       |      0.5      |
+| Helpers/Restricts|    H     |      0.25      |      0.25     |
+| Controllers      |    H     |      0.5       |      0.5      |
+| Routes           |    H     |      0.25      |      0.25     |
+| API Config       |    H     |      0.25      |      0.25     |
+| Landing Page     |    H     |      0.5       |      0.5      |
+| Profile Screen   |    H     |      0.25      |      0.25     |
+| UserProfile Comp.|          |                |               |
+
+| Totals | L | 0 | 0 |
+
+Ike
+| Component        | Priority | Estimated (hrs)| Time Invested |
+| ---------------- | :------: | :------------: | :-----------: |
+| Proposal/Concept |    H     |      4hrs      |       7       |
+| GitHub Debugs    |    H     |      2hrs      |       5       |
+| User Model       |    H     |      1.5       |       4       |
+| Controllers      |    M     |      0.5       |      0.5      |
+| Routes           |    H     |      0.25      |      0.25     |
+| FrontEnd Services|    H     |      0.25      |     0.5       |
+| SignUp Screen    |    H     |      4hrs      |       7       |
+| Tutor Details    |    H     |                |               |
+| User Signup Comp.|    H     |                |               |
+
+| Totals | L | 0 | 0 |
+
+Francis
+| Component        | Priority | Estimated (hrs)| Time Invested |
+| ---------------- | :------: | :------------: | :-----------: |
+| Proposal/Concept |    H     |      4hrs      |       4       |
+| GitHub Debugs    |    H     |      2hrs      |       5       |
+| Back Boilerplate |    H     |      .25       |       .25     |
+| Controllers      |    M     |      .75       |       .75     |
+| Routes           |    H     |      1         |      .5       |
+| Back End Models  |    H     |      .25       |     0.25      |
+| Front Setup      |    H     |      1         |      .75      |
+| Tutor Services   |    H     |      1.5       |       2       |
+| Tutor Sign Comp. |    H     |      1         |      1.5      |
+| Navbar           |    H     |      1         |      .25      |
+| Tutor Profile    |    H     |      1         |       2       |
+
+| Totals | L | 0 | 0 |
+
 
 ## SWOT Analysis
 

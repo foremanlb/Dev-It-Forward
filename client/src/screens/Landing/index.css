@@ -1,0 +1,25 @@
+.landing-container {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3c6e71;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.hero-image {
+  width: 400px;
+  border-radius: 200px;
+  height: auto;
+  border: 6px solid rgb(248, 248, 248);
+  box-shadow: 10px 10px 5px rgb(46, 45, 45);
+}
+
+.hero-image-paragraph-text {
+  color: white;
+  text-align: center;
+}
