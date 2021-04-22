@@ -7,12 +7,14 @@ export default function ProfilePage(props) {
   const currentTutor = props.currentTutor
   const users = props.users;
   const tutors = props.tutors;
+  const setToggle = props.setToggle
+  const setCurrentTutor = props.setCurrentTutor
   
 
   const renderProfilePage = () => {
     if (currentTutor) {
       const tutor = tutors.find(({username}) => username === currentTutor.username)
-      return <TutorProfile tutor={tutor} />;
+      return <TutorProfile tutor={tutor} setToggle={setToggle} setCurrentTutor={setCurrentTutor}/>;
     } else if (currentUser) {
       const user = users.find(({username}) => username === currentUser.username)
       return <UserProfile user={user} />;

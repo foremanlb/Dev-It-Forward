@@ -55,7 +55,7 @@ export const verifyTutor = async () => {
 };
 
 export const deleteTutor = async (id) => {
-  const token = await localStorage.get("token");
+  const token = await localStorage.getItem("token");
   if (token) {
     const deletedTutor = await api.delete(`/tutors/${id}`)
     return deletedTutor;

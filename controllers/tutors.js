@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = "rCbL:+]7*M.PT^E";
+const TOKEN_KEY = "srCbL:+]7*M.PT^E";
 
 //GetTutors
 const getTutors = async (req, res) => {
@@ -35,6 +35,7 @@ const getTutor = async (req, res) => {
 
 //Update Tutor
 const updateTutor = async (req, res) => {
+  console.log(req.params)
   try {
     const tutor = await Tutor.findByIdAndUpdate(
       req.params.id,
