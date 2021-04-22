@@ -1,0 +1,32 @@
+.tutor-detail {
+  background:  #3c6e71;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.detail{
+ padding-top: 50px;
+}
+.tutor-user-name{
+ font-size: 30px;
+}
+
+.tutor-email,.tutor-hourlyrate{
+  font-size: 20px;
+}
+.tutor-detail{
+ 
+  padding-left: 100px;
+}
+
+.tutor-description {
+
+  padding-bottom: 50px;
+}
+.tutor-user-image img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
