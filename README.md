@@ -1,6 +1,6 @@
 # Dev-It-Forward
 
-Netlify URL HERE
+https://60822cdc3695ae349250f0c6--gracious-hodgkin-2b0838.netlify.app/Landing
 
 ## Project Description
 
@@ -55,9 +55,9 @@ Creating an app for subject matter experts to connect to potential students for 
 | Apr 4/18 | Front End Development                | Complete   |
 | Apr 4/19 | Front End Development  Day 2         | Complete   |
 | Apr 4/20 | Front End Development  Day 3         | Complete   |
-| Apr 4/21 | Finish Front End Development/Testing | Incomplete |
-| Apr 4/22 | CSS Styling /Testing/No New Features | Incomplete |
-| Apr 4/23 | Presentations                        | Incomplete |
+| Apr 4/21 | Finish Front End Development/Testing | Complete |
+| Apr 4/22 | CSS Styling /Testing/No New Features | Complete |
+| Apr 4/23 | Presentations                        | Complete |
 
 ## Timeframe and Priority Matrix
 
