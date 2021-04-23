@@ -22,7 +22,7 @@ export default function UsersSignIn(props) {
   history.push("/");
   };
 
-  function handleChange(event) {
+  const handleChange = (event) => {
   let { id, value } = event.target;
   setUserInput((prevInput) => ({
     ...prevInput,
