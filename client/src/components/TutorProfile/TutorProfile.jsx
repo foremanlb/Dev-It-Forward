@@ -28,27 +28,16 @@ export default function TutorProfile(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await updateTutor(tutor._id, input);
+    await updateTutor(input._id, input);
     setToggle((prevState) => !prevState);
-    props.setCurrentTutor({
-      username: input.username,
-      email: input.email,
-    });
     alert("Tutor Profile Updated!");
   };
 
   return (
     <div className="profile-container">
+      <h3>{`Nice to see you again, ${input.username}!`}</h3>
+      <p>This is the info we have on your profile</p>
       <form className="form-container" onSubmit={handleSubmit}>
-        <label htmlFor="username">User Name</label>
-        <input
-          type="text"
-          name="username"
-          required
-          onChange={handleChange}
-          value={input.username}
-          placeholder="hello"
-        />
         <label htmlFor="email">Email</label>
         <input
           type="email"
