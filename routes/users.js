@@ -10,13 +10,13 @@ const {
   signIn,
 } = require("../controllers/users.js");
 
-const restrict = require("../helpers/restrict.js");
+const restrict = require("../helpers/restrictUser.js");
 
 const router = Router();
 
 router.post("/sign-up", signUp);
 router.get("/", getUsers);
-router.get("/:id", getUser);
+router.get("/user/:id", getUser);
 router.put("/password-change/:id", changePassword);
 router.put("/:id", restrict, updateUser);
 router.delete("/:id", restrict, deleteUser);

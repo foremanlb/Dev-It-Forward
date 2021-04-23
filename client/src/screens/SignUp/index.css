@@ -1,0 +1,8 @@
+#signUp {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #3c6e71;
+  padding-bottom: 30px;
+  align-items: center;
+}

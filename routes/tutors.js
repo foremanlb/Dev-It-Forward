@@ -9,12 +9,12 @@ const {
   changePassword,
   verify,
 } = require("../controllers/tutors.js");
-const restrict = require("../helpers/restrict.js");
+const restrict = require("../helpers/restrictTutor.js");
 
 const router = Router();
 router.put("/password-change/:id", changePassword);
 router.get("/", getTutors);
-router.get("/:id", getTutor);
+router.get("/tutor/:id", getTutor);
 router.put("/:id", restrict, updateTutor);
 router.delete("/:id", restrict, deleteTutor);
 router.post("/sign-up", signUp);
