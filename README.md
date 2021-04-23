@@ -17,6 +17,21 @@ Creating an app for subject matter experts to connect to potential students for 
 ## API and Data Sample
 
 ```
+{
+programmingLanguage	
+0	"Ruby"
+1	"React"
+2	"HTML"
+_id	"6082e014253a60001527a777"
+username	"blastoise"
+email	"water@type.com"
+hourlyRate	"90000"
+description	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+password_digest	"$2b$11$tlueFK1XCGVRP0NmklgAReCxQ3/dHJUooBYv7mOpBQ.6OSU748XAi"
+createdAt	"2021-04-23T14:56:20.792Z"
+updatedAt	"2021-04-23T14:56:20.792Z"
+
+}
 
 ```
 
@@ -55,9 +70,9 @@ Creating an app for subject matter experts to connect to potential students for 
 | Apr 4/18 | Front End Development                | Complete   |
 | Apr 4/19 | Front End Development  Day 2         | Complete   |
 | Apr 4/20 | Front End Development  Day 3         | Complete   |
-| Apr 4/21 | Finish Front End Development/Testing | Complete |
-| Apr 4/22 | CSS Styling /Testing/No New Features | Complete |
-| Apr 4/23 | Presentations                        | Complete |
+| Apr 4/21 | Finish Front End Development/Testing | Complete   |
+| Apr 4/22 | CSS Styling /Testing/No New Features | Complete   |
+| Apr 4/23 | Presentations                        | Complete   |
 
 ## Timeframe and Priority Matrix
 
@@ -71,7 +86,7 @@ Craig
 | Controllers      |    H     |      0.25      |      0.25     |
 | Routes           |    H     |      0.25      |     0.5       |
 | Back-End Deploy  |    H     |      4hrs      |       7       |
-| Front-End Setup  |    H     |                | Time Invested |
+| Front-End Setup  |    H     |                |               |
 | Card Container   |    H     |                |               |
 | Tutor Card       |    H     |                |               |
 | Tutor Gallery    |    H     |                |               |
