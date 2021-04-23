@@ -38,14 +38,14 @@ export default function TutorSignIn(props) {
         <label htmlFor="username" placeholder="username">Username</label>
         <input
           type="text"
-          id="username"
+          id="tutor username"
           onChange={handleChange}
           value={tutorInput.username}
         ></input>
         <label htmlFor="password" placeholder="password">Password</label>
         <input
           type="password"
-          id="password"
+          id="tutor password"
           onChange={handleChange}
           value={tutorInput.password}
         ></input>
