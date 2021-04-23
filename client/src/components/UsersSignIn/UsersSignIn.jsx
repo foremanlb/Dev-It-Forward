@@ -38,14 +38,14 @@ export default function UsersSignIn(props) {
         <label htmlFor="username" placeholder="username">Username</label>
         <input
           type="text"
-          id="user username"
+          id="username"
           onChange={handleChange}
           value={userInput.username}
         ></input>
         <label htmlFor="password" placeholder="password">Password</label>
         <input
           type="password"
-          id="user password"
+          id="password"
           onChange={handleChange}
           value={userInput.password}
         ></input>
