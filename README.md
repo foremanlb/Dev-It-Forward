@@ -1,6 +1,6 @@
 # Dev-It-Forward
 
-https://60822cdc3695ae349250f0c6--gracious-hodgkin-2b0838.netlify.app/Landing
+https://gracious-hodgkin-2b0838.netlify.app/
 
 ## Project Description
 
